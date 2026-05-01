@@ -1,0 +1,18 @@
+# Docs: https://yazi-rs.github.io/docs/configuration/keymap
+
+# <Home> and <End> keys
+[[mgr.append_keymap]]
+on   = "<Home>"
+run  = "arrow top"
+desc = "Go to top"
+[[mgr.append_keymap]]
+on   = "<End>"
+run  = "arrow bot"
+desc = "Go to bottom"
+
+# Useful when Yazi is not already running in PowerShell
+[[mgr.prepend_keymap]]
+on   = "!"
+for  = "windows"
+run  = 'shell "pwsh.exe" --block'
+desc = "Open PowerShell here"
