@@ -1,0 +1,22 @@
+# Common settings for global/system git config
+[diff]
+    wsErrorHighlight = all
+[feature]
+    manyFiles = true
+[fetch]
+    prune = true
+[grep]
+    extendedRegexp = true
+    lineNumber = true
+[log]
+    date = iso
+[merge]
+    conflictStyle = zdiff3
+[pull]
+    ff = only
+
+# VS Code as a tool
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
