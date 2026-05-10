@@ -31,11 +31,10 @@ return {
   },
   {
     -- High-performance color highlighter.
-    -- https://github.com/norcalli/nvim-colorizer.lua
-    'norcalli/nvim-colorizer.lua',
-    config = function()
-      require('colorizer').setup()
-    end,
+    -- https://github.com/catgoose/nvim-colorizer.lua
+    'catgoose/nvim-colorizer.lua',
+    event = "BufReadPre",
+    opts = {},
   },
 }
 
