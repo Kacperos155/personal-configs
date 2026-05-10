@@ -59,7 +59,7 @@ vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.softtabstop = -1
 -- Replace <TAB> with spaces
-vim.o.expandtab = false
+vim.o.expandtab = true
 
 -- [Text wrapping]
 -- Display long lines as a single line instead of visually wrapping them.
