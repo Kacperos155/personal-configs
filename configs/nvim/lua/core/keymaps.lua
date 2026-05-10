@@ -4,8 +4,8 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Clear highlights on search when pressing <Esc> in normal mode
+-- Clear highlights on search when pressing <Esc> in normal mode.
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
--- Use <Esc> to exit terminal mode
-vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
+-- Use double <Esc> to exit terminal mode.
+vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>')
