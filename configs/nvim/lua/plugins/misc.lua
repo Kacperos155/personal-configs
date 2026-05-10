@@ -2,8 +2,8 @@
 return {
   {
     -- Detect tabstop and shiftwidth automatically.
-    -- https://github.com/tpope/vim-sleuth
-    'tpope/vim-sleuth',
+    -- https://github.com/NMAC427/guess-indent.nvim
+    'NMAC427/guess-indent.nvim',
   },
   {
     -- Hints keybinds.
