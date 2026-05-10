@@ -33,7 +33,7 @@ return {
     -- High-performance color highlighter.
     -- https://github.com/catgoose/nvim-colorizer.lua
     'catgoose/nvim-colorizer.lua',
-    event = "BufReadPre",
+    event = {"BufReadPre", "InsertEnter"},
     opts = {},
   },
   {
