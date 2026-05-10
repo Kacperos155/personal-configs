@@ -9,3 +9,9 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Use double <Esc> to exit terminal mode.
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>')
+
+-- Move whole lines.
+vim.keymap.set({ 'n', 'x' }, '<A-Up>',    ':move -2<CR>',       { desc = 'Move Line Up' })
+vim.keymap.set({ 'n', 'x' }, '<A-Down>',  ':move +1<CR>',       { desc = 'Move Line Down' })
+vim.keymap.set('i',          '<A-Up>',    '<C-o>:move -2<CR>',  { desc = 'Move Line Up' })
+vim.keymap.set('i',          '<A-Down>',  '<C-o>:move +1<CR>',  { desc = 'Move Line Down' })
