@@ -33,6 +33,6 @@ require('lazy').setup({
   require 'plugins.treesitter',
   require 'plugins.git',
   require 'plugins.indent-blankline',
+  require 'plugins.mini',
   require 'plugins.misc',
 })
-
