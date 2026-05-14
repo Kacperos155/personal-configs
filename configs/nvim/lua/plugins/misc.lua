@@ -11,7 +11,11 @@ return {
     -- https://github.com/folke/which-key.nvim
     'folke/which-key.nvim',
     opts = {
-      delay = 3000,
+      -- Delay before showing the popup. Can be a number or a function that returns a number.
+      ---@type number | fun(ctx: { keys: string, mode: string, plugin?: string }):number
+      delay = function(ctx)
+          return ctx.plugin and 0 or 1000 -- 0s for plugins (marks/registers/spelling) and 1s otherwise
+      end,
     },
   },
   {
