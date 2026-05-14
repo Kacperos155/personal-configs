@@ -7,4 +7,10 @@ return {
     'nvim-mini/mini.tabline',
     opts = {},
   },
+  {
+    -- Automatic highlighting of word under cursor.
+    -- https://github.com/nvim-mini/mini.nvim/blob/main/readmes/mini-cursorword.md
+    'nvim-mini/mini.cursorword',
+    opts = {},
+  },
 }
