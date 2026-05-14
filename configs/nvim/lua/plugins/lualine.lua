@@ -13,10 +13,22 @@ return {
       }
     }
 
+    -- Use data from "lewis6991/gitsigns.nvim" as a source for diff info.
+    local function gitsigns_diff_source()
+      local gitsigns = vim.b.gitsigns_status_dict
+      if gitsigns then
+        return {
+          added = gitsigns.added,
+          modified = gitsigns.changed,
+          removed = gitsigns.removed
+        }
+      end
+    end
+
     require('lualine').setup({
       sections = {
         lualine_a = {'mode'},
-        lualine_b = {'branch', 'diff', 'diagnostics'},
+        lualine_b = {'branch', {'diff', source = gitsigns_diff_source}, 'diagnostics'},
         lualine_c = {filename},
         lualine_x = {'encoding'},
         lualine_y = {'filetype'},
