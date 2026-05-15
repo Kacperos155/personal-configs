@@ -15,3 +15,7 @@ vim.keymap.set({ 'n', 'x' }, '<A-Up>',    ':move -2<CR>',       { desc = 'Move L
 vim.keymap.set({ 'n', 'x' }, '<A-Down>',  ':move +1<CR>',       { desc = 'Move Line Down' })
 vim.keymap.set('i',          '<A-Up>',    '<C-o>:move -2<CR>',  { desc = 'Move Line Up' })
 vim.keymap.set('i',          '<A-Down>',  '<C-o>:move +1<CR>',  { desc = 'Move Line Down' })
+
+-- Do not return to normal mode after changing indentation.
+vim.keymap.set('v', '<', '<gv', {})
+vim.keymap.set('v', '>', '>gv', {})
