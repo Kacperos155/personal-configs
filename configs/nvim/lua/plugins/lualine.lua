@@ -38,12 +38,17 @@ return {
       end
     end
 
+    -- Show number of spaces for indentation in the current buffer.
+    local function indentation()
+      return '  ' .. vim.o.shiftwidth
+    end
+
     require('lualine').setup({
       sections = {
         lualine_a = {'mode'},
         lualine_b = {filename},
         lualine_c = {{'branch', cond = can_show_extended_info}, {'diff', source = gitsigns_diff_source}},
-        lualine_x = {'diagnostics'},
+        lualine_x = {'diagnostics', {indentation, cond = can_show_extended_info}},
         lualine_y = {encoding, 'filetype'},
         lualine_z = {{'location', icon = ' ', cond = can_show_extended_info}},
       },
