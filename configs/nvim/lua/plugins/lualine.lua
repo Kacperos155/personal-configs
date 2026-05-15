@@ -4,6 +4,11 @@ return {
   dependencies = { 'nvim-tree/nvim-web-devicons' },
 
   config = function()
+    -- Condition for displaying less important info.
+    local function can_show_extended_info()
+      return vim.api.nvim_win_get_width(0) >= 80
+    end
+
     local filename = {
       'filename',
       symbols = {
@@ -11,6 +16,14 @@ return {
         modified = ' ',
         readonly = '󰌾',
       }
+    }
+
+    local encoding = {
+      'encoding',
+      icon = '󰀬 ',
+      cond = function()
+        return vim.o.fileencoding ~= 'utf-8'
+      end
     }
 
     -- Use data from "lewis6991/gitsigns.nvim" as a source for diff info.
@@ -28,19 +41,22 @@ return {
     require('lualine').setup({
       sections = {
         lualine_a = {'mode'},
-        lualine_b = {'branch', {'diff', source = gitsigns_diff_source}, 'diagnostics'},
-        lualine_c = {filename},
-        lualine_x = {'encoding'},
-        lualine_y = {'filetype'},
-        lualine_z = {'location', 'progress'},
+        lualine_b = {filename},
+        lualine_c = {{'branch', cond = can_show_extended_info}, {'diff', source = gitsigns_diff_source}},
+        lualine_x = {'diagnostics'},
+        lualine_y = {encoding, 'filetype'},
+        lualine_z = {{'location', icon = ' ', cond = can_show_extended_info}},
       },
       inactive_sections = {
         lualine_a = {},
-        lualine_b = {},
-        lualine_c = {filename},
-        lualine_x = {'location', 'progress'},
+        lualine_b = {filename},
+        lualine_c = {},
+        lualine_x = {},
         lualine_y = {},
         lualine_z = {},
+      },
+      extensions = {
+        'quickfix',
       },
     })
   end
