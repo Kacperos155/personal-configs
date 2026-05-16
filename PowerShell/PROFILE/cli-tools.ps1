@@ -8,3 +8,8 @@ function y {
     }
     Remove-Item -Path $tmp
 }
+
+# Pretty-print CLI command help, e.g. `fzf --help | bathelp`
+function bathelp {
+    $input | bat --language=help --plain
+}
