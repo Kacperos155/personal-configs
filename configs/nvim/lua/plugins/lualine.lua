@@ -45,7 +45,11 @@ return {
 
     -- Show number of spaces for indentation in the current buffer.
     local function indentation()
-      return '  ' .. vim.o.shiftwidth
+      if vim.o.expandtab then
+        return '  ' .. vim.o.shiftwidth
+      else
+        return '  TAB(' .. vim.o.shiftwidth .. ')'
+      end
     end
 
     require('lualine').setup({
