@@ -32,7 +32,12 @@ function M.setup()
     vim.api.nvim_create_autocmd('FileType', {
         pattern = filetypes,
         callback = function()
+            -- Highlighting
             vim.treesitter.start()
+
+            -- Folds
+            vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+            vim.wo[0][0].foldmethod = 'expr'
         end,
     })
 end

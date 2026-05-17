@@ -71,3 +71,7 @@ vim.o.breakindent = true
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.o.ignorecase = true
 vim.o.smartcase = true
+
+-- [Folds]
+-- Open all folds by default.
+vim.o.foldlevelstart = 99
