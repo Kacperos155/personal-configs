@@ -1,4 +1,6 @@
--- Highlight, edit, and navigate code
+local ts = require("treesitter")
+
+-- Archived plugin but still useful for installing parsers.
 -- https://github.com/nvim-treesitter/nvim-treesitter
 return {
     'nvim-treesitter/nvim-treesitter',
@@ -6,26 +8,7 @@ return {
     build = ':TSUpdate',
     branch = 'main',
 
-    -- [[ Configure Treesitter ]] See `:help nvim-treesitter-intro`
     config = function()
-        -- ensure basic parser are installed
-        local parsers = {
-            'cmake',
-            'cpp',
-            'diff',
-            'html',
-            'lua',
-            'luadoc',
-            'markdown',
-            'markdown_inline',
-            'powershell',
-            'python',
-            'toml',
-            'vim',
-            'vimdoc',
-            'yaml'
-        }
-        require('nvim-treesitter').install(parsers)
+        require('nvim-treesitter').install(ts.parsers)
     end
 }
-

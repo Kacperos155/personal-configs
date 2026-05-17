@@ -36,3 +36,7 @@ require('lazy').setup({
   require 'plugins.mini',
   require 'plugins.misc',
 })
+
+-- Enable Treesitter syntax parsing.
+-- Parsers are asynchronously installed by the 'nvim-treesitter/nvim-treesitter' plugin.
+require('treesitter').setup()
