@@ -13,4 +13,19 @@ return {
     'nvim-mini/mini.cursorword',
     opts = {},
   },
+  {
+    -- Remove buffers without changing window layout.
+    -- https://github.com/nvim-mini/mini.nvim/blob/main/readmes/mini-bufremove.md
+    'nvim-mini/mini.bufremove',
+    opts = {},
+
+    config = function(_, opts)
+      local M = require('mini.bufremove')
+      M.setup(opts)
+
+      vim.keymap.set('n', '<A-W>', function()
+        M.delete()
+      end, {desc = 'Remove the current buffer'})
+    end,
+  },
 }
