@@ -22,3 +22,7 @@ vim.keymap.set('i',          '<A-Down>',  '<C-o>:move +1<CR>',  { desc = 'Move L
 -- Do not return to normal mode after changing indentation.
 vim.keymap.set('v', '<', '<gv', {})
 vim.keymap.set('v', '>', '>gv', {})
+
+-- Change active buffer (file view).
+vim.keymap.set('n', '<A-PageUp>', '<cmd>bnext<CR>')
+vim.keymap.set('n', '<A-PageDown>', '<cmd>bprevious<CR>')
