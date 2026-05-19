@@ -56,7 +56,7 @@ return {
       sections = {
         lualine_a = {'mode'},
         lualine_b = {filename},
-        lualine_c = {{'branch', cond = can_show_extended_info}, {'diff', source = gitsigns_diff_source}},
+        lualine_c = {{'diff', source = gitsigns_diff_source}},
         lualine_x = {'diagnostics', {indentation, cond = can_show_extended_info}},
         lualine_y = {encoding, 'filetype'},
         lualine_z = {window_size, {'location', icon = ' ', cond = can_show_extended_info}},
