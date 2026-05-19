@@ -1,15 +1,17 @@
--- https://github.com/EdenEast/nightfox.nvim
+-- https://catppuccin.com/ports/
+-- https://github.com/catppuccin/nvim
 return {
-  "EdenEast/nightfox.nvim",
-  version = false,
+  "catppuccin/nvim",
+  name = "catppuccin",
   lazy = false,
-  priority = 1000, -- make sure to load this before all the other start plugins
 
-  config = function()
-    require("nightfox").setup({
-        -- empty
-    })
+  -- It's recommended to set this to a high number for colorschemes.
+  priority = 1000,
 
-    vim.cmd("colorscheme terafox")
-  end
+  config = function(_, opts)
+    require("catppuccin").setup(opts)
+    vim.cmd.colorscheme "catppuccin-mocha"
+  end,
+
+  opts = {},
 }
