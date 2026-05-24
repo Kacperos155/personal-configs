@@ -73,5 +73,8 @@ return {
         'quickfix',
       },
     })
+
+    -- Avoid duplicate mode display in the command line.
+    vim.o.showmode = false
   end
 }
