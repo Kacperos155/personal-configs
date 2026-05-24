@@ -11,6 +11,9 @@ return {
 
     local filename = {
       'filename',
+      path = 1,             -- Show relative path.
+      shorting_target = 50, -- Number of characters reserved for other statusline elements.
+
       symbols = {
         -- https://www.nerdfonts.com/cheat-sheet
         modified = ' ',
