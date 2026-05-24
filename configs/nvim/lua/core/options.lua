@@ -44,9 +44,13 @@ vim.o.termguicolors = true
 vim.o.splitright = true
 vim.o.splitbelow = true
 
+-- [Popup menus]
+vim.o.pumblend = 3
+vim.o.pumborder = 'single'
+vim.o.pumheight = 10
+
 -- [Whitespaces]
 -- Sets how neovim will display certain whitespace characters in the editor.
--- See `:help 'list'` and `:help 'listchars'`
 vim.o.list = true
 vim.opt.listchars = {
   tab = '» ',
