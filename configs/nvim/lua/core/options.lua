@@ -79,3 +79,7 @@ vim.o.smartcase = true
 -- [Folds]
 -- Open all folds by default.
 vim.o.foldlevelstart = 99
+
+-- [Autocompletion]
+vim.o.autocomplete = true
+vim.o.completeopt = 'menuone,noselect'
