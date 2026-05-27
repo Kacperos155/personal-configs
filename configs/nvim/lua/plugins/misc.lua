@@ -39,7 +39,13 @@ return {
     -- https://github.com/catgoose/nvim-colorizer.lua
     'catgoose/nvim-colorizer.lua',
     event = {"BufReadPre", "InsertEnter"},
-    opts = {},
+    opts = {
+      options = {
+        parsers = {
+          names = { enable = false },
+        },
+      },
+    },
   },
   {
     -- Improved UI and workflow for quickfix & loclist
