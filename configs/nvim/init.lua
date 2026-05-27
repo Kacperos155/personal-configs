@@ -2,6 +2,7 @@ require 'core.powershell'
 require 'core.options'
 require 'core.keymaps'
 require 'core.auto_commands'
+require 'core.user_commands'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
