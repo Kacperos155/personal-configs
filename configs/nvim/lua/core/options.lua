@@ -79,6 +79,9 @@ vim.o.smartcase = true
 -- [Folds]
 -- Open all folds by default.
 vim.o.foldlevelstart = 99
+-- Use indentation-based folds by default.
+-- Treesitter may override this for supported filetypes.
+vim.o.foldmethod = 'indent'
 
 -- [Autocompletion]
 vim.o.autocomplete = true
