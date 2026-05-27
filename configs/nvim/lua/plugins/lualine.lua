@@ -4,21 +4,37 @@ return {
   dependencies = { 'nvim-tree/nvim-web-devicons' },
 
   config = function()
+
+    -- Option to use a single global statusline.
+    -- If false, every window has its own statusline.
+    -- If true, every window displays a filename in the bar at the top of the window.
+    local use_global_statusline = true
+
     -- Condition for displaying less important info.
     local function can_show_extended_info()
-      return vim.api.nvim_win_get_width(0) >= 80
+      local width = use_global_statusline and vim.o.columns or vim.api.nvim_win_get_width(0)
+      return width >= 80
     end
 
-    local filename = {
+    -- Icons for filenames.
+    local filename_symbols = {
+      -- https://www.nerdfonts.com/cheat-sheet
+      modified = ' ',
+      readonly = '󰌾',
+    }
+
+    local filename_statusline = {
       'filename',
       path = 1,             -- Show relative path.
       shorting_target = 50, -- Number of characters reserved for other statusline elements.
+      symbols = filename_symbols,
+    }
 
-      symbols = {
-        -- https://www.nerdfonts.com/cheat-sheet
-        modified = ' ',
-        readonly = '󰌾',
-      }
+    local filename_winbar = {
+      'filename',
+      path = 0,             -- Show only the filename.
+      shorting_target = 20, -- Number of characters reserved for other statusline elements.
+      symbols = filename_symbols,
     }
 
     local encoding = {
@@ -56,9 +72,12 @@ return {
     end
 
     require('lualine').setup({
+      options = {
+        globalstatus = use_global_statusline,
+      },
       sections = {
         lualine_a = {'mode'},
-        lualine_b = {filename},
+        lualine_b = {filename_statusline},
         lualine_c = {{'diff', source = gitsigns_diff_source}},
         lualine_x = {'diagnostics', {indentation, cond = can_show_extended_info}},
         lualine_y = {encoding, 'filetype'},
@@ -66,11 +85,27 @@ return {
       },
       inactive_sections = {
         lualine_a = {},
-        lualine_b = {filename},
+        lualine_b = use_global_statusline and {} or {filename_statusline},
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},
         lualine_z = {},
+      },
+      winbar = {
+        lualine_a = {},
+        lualine_b = use_global_statusline and {filename_winbar} or {},
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {}
+      },
+      inactive_winbar = {
+        lualine_a = {},
+        lualine_b = use_global_statusline and {filename_winbar} or {},
+        lualine_c = {},
+        lualine_x = {},
+        lualine_y = {},
+        lualine_z = {}
       },
       extensions = {
         'quickfix',
