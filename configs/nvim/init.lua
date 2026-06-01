@@ -33,6 +33,7 @@ require('lazy').setup({
   require 'plugins.lualine',
   require 'plugins.treesitter',
   require 'plugins.git',
+  require 'plugins.aerial',
   require 'plugins.indent-blankline',
   require 'plugins.mini',
   require 'plugins.misc',

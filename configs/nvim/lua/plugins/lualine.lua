@@ -108,6 +108,7 @@ return {
         lualine_z = {}
       },
       extensions = {
+        'aerial',
         'quickfix',
       },
     })
