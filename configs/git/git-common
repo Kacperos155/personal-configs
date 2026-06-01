@@ -1,6 +1,11 @@
 # Common settings for global/system git config
+[core]
+    editor = nvim -n
 [diff]
     wsErrorHighlight = all
+    # Tools:
+    tool = nvimdiff
+    guitool = vscode
 [feature]
     manyFiles = true
 [fetch]
@@ -12,11 +17,8 @@
     date = iso
 [merge]
     conflictStyle = zdiff3
+    # Tools:
+    tool = nvimdiff
+    guitool = vscode
 [pull]
     ff = only
-
-# VS Code as a tool
-[difftool "vscode"]
-    cmd = code --wait --diff $LOCAL $REMOTE
-[mergetool "vscode"]
-    cmd = code --wait $MERGED
