@@ -42,3 +42,4 @@ vim.keymap.set('n', '<A-PageDown>', '<cmd>tabprevious<CR>', { desc = 'Go to prev
 
 -- Toggle <something>.
 vim.keymap.set('n', "<leader>tw", '<cmd>set wrap!<CR>',     { desc = "Toggle line wrapping" })
+vim.keymap.set('n', "<leader>ts", '<cmd>set spell!<CR>',    { desc = "Toggle spell checking" })
