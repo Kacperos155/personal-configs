@@ -16,6 +16,7 @@ M.parsers = {
     'toml',
     'vim',
     'vimdoc',
+    'xml',
     'yaml',
 }
 
