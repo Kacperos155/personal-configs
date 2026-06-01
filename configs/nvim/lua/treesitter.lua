@@ -6,6 +6,7 @@ M.parsers = {
     'diff',
     'git_rebase',
     'gitcommit',
+    'glsl',
     'html',
     'lua',
     'luadoc',
