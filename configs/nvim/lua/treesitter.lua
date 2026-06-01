@@ -14,6 +14,7 @@ M.parsers = {
     'markdown_inline',
     'powershell',
     'python',
+    'regex',
     'toml',
     'vim',
     'vimdoc',
