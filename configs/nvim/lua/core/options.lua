@@ -12,14 +12,6 @@ vim.o.mouse = 'a'
 vim.o.confirm = true
 -- Save undo operations between sessions.
 vim.o.undofile = true
--- Sync clipboard between OS and Neovim.
--- Schedule the setting after `UIEnter` because it can increase startup-time.
-vim.api.nvim_create_autocmd('UIEnter', {
-  callback = function()
-    vim.o.clipboard = 'unnamedplus'
-  end,
-  once = true,
-})
 
 -- [Responsiveness]
 vim.o.updatetime = 250
