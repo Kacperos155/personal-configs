@@ -16,6 +16,12 @@ return {
       delay = function(ctx)
           return ctx.plugin and 0 or 1000 -- 0s for plugins (marks/registers/spelling) and 1s otherwise
       end,
+
+      --- Custom mapping groups.
+      ---@type wk.Spec
+      spec = {
+        { '<leader>t', group = '[T]oggle' },
+      },
     },
   },
   {

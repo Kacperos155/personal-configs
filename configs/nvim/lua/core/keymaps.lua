@@ -39,3 +39,6 @@ vim.keymap.set('n', '<C-PageDown>', '<cmd>bprevious<CR>',   { desc = 'Go to prev
 -- Remap tab navigation keys to <ALT-PageUp/Down>.
 vim.keymap.set('n', '<A-PageUp>',   '<cmd>tabnext<CR>',     { desc = 'Go to next tab page' })
 vim.keymap.set('n', '<A-PageDown>', '<cmd>tabprevious<CR>', { desc = 'Go to previous tab page' })
+
+-- Toggle <something>.
+vim.keymap.set('n', "<leader>tw", '<cmd>set wrap!<CR>',     { desc = "Toggle line wrapping" })
