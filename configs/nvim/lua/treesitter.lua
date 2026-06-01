@@ -4,6 +4,8 @@ M.parsers = {
     'cmake',
     'cpp',
     'diff',
+    'git_rebase',
+    'gitcommit',
     'html',
     'lua',
     'luadoc',
