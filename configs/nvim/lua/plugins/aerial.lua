@@ -2,7 +2,20 @@
 -- https://github.com/stevearc/aerial.nvim
 return {
   'stevearc/aerial.nvim',
-  opts = {},
+  opts = {
+    -- A list of symbol types to display.
+    filter_kind = {
+      "Class",
+      "Constructor",
+      "Enum",
+      "Function",
+      "Interface",
+      "Method",
+      "Module",
+      "Namespace",
+      "Struct",
+    },
+  },
 
   config = function(_, opts)
     local Aerial = require('aerial')
