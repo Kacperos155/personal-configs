@@ -11,10 +11,10 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>')
 
 -- Interactions with the system clipboard.
-vim.keymap.set({ 'n', 'x' }, "<leader>y",  [["+y]],  { desc = "Yank to the system clipboard" })
-vim.keymap.set({ 'n',     }, "<leader>Y",  [["+y$]], { desc = "Yank line from this point to the system clipboard" })
-vim.keymap.set({ 'n', 'x' }, "<leader>p",  [["+p]],  { desc = "Paste from the system clipboard (after cursor)" })
-vim.keymap.set({ 'n', 'x' }, "<leader>P",  [["+P]],  { desc = "Paste from the system clipboard (before cursor)" })
+vim.keymap.set({ 'n', 'x' }, '<leader>y',  [["+y]],  { desc = 'Yank to the system clipboard' })
+vim.keymap.set({ 'n',     }, '<leader>Y',  [["+y$]], { desc = 'Yank line from this point to the system clipboard' })
+vim.keymap.set({ 'n', 'x' }, '<leader>p',  [["+p]],  { desc = 'Paste from the system clipboard (after cursor)' })
+vim.keymap.set({ 'n', 'x' }, '<leader>P',  [["+P]],  { desc = 'Paste from the system clipboard (before cursor)' })
 
 -- Save file on <Ctrl-S>.
 vim.keymap.set({ 'n', 'v', 'i' }, '<C-S>', '<cmd>write<CR>',    { desc = 'Save file' })
@@ -41,5 +41,5 @@ vim.keymap.set('n', '<A-PageUp>',   '<cmd>tabnext<CR>',     { desc = 'Go to next
 vim.keymap.set('n', '<A-PageDown>', '<cmd>tabprevious<CR>', { desc = 'Go to previous tab page' })
 
 -- Toggle <something>.
-vim.keymap.set('n', "<leader>tw", '<cmd>set wrap!<CR>',     { desc = "Toggle line wrapping" })
-vim.keymap.set('n', "<leader>ts", '<cmd>set spell!<CR>',    { desc = "Toggle spell checking" })
+vim.keymap.set('n', '<leader>tw', '<cmd>set wrap!<CR>',     { desc = 'Toggle line [w]rapping' })
+vim.keymap.set('n', '<leader>ts', '<cmd>set spell!<CR>',    { desc = 'Toggle [s]pell checking' })
