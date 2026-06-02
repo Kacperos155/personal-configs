@@ -20,6 +20,7 @@ return {
       --- Custom mapping groups.
       ---@type wk.Spec
       spec = {
+        { '<leader>o', group = '[O]pen' },
         { '<leader>t', group = '[T]oggle' },
       },
     },
