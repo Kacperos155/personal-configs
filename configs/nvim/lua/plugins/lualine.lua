@@ -12,7 +12,7 @@ return {
 
     -- Condition for displaying less important info.
     local function can_show_extended_info()
-      local width = use_global_statusline and vim.o.columns or vim.api.nvim_win_get_width(0)
+      local width = use_global_statusline and vim.go.columns or vim.api.nvim_win_get_width(0)
       return width >= 80
     end
 
@@ -41,7 +41,7 @@ return {
       'encoding',
       icon = '󰀬 ',
       cond = function()
-        return vim.o.fileencoding ~= 'utf-8'
+        return vim.bo.fileencoding ~= 'utf-8'
       end
     }
 
@@ -64,10 +64,12 @@ return {
 
     -- Show number of spaces for indentation in the current buffer.
     local function indentation()
-      if vim.o.expandtab then
-        return '  ' .. vim.o.shiftwidth
+      local shiftwidth = vim.fn.shiftwidth()
+
+      if vim.bo.expandtab then
+        return '  ' .. shiftwidth
       else
-        return '  TAB(' .. vim.o.shiftwidth .. ')'
+        return '  TAB(' .. shiftwidth .. ')'
       end
     end
 
@@ -88,9 +90,19 @@ return {
         lualine_a = {'mode'},
         lualine_b = {filename_statusline},
         lualine_c = {{'diff', source = gitsigns_diff_source}},
-        lualine_x = {'diagnostics', {indentation, cond = can_show_extended_info}, {spell_checking, cond = can_show_extended_info}},
-        lualine_y = {encoding, 'filetype'},
-        lualine_z = {window_size, {'location', icon = ' ', cond = can_show_extended_info}},
+        lualine_x = {
+          'diagnostics',
+          {indentation, cond = can_show_extended_info},
+          {spell_checking, cond = can_show_extended_info}
+        },
+        lualine_y = {
+          encoding,
+          'filetype'
+        },
+        lualine_z = {
+          window_size,
+          {'location', icon = ' ', cond = can_show_extended_info}
+        },
       },
       inactive_sections = {
         lualine_a = {},
