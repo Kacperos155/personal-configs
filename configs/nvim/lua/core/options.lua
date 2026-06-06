@@ -28,6 +28,8 @@ vim.o.cursorline = true
 vim.o.scrolloff = 10
 -- Always show the sign column. Prevents text from shifting when signs appear.
 vim.o.signcolumn = 'yes'
+-- Disable showing the tabline. This can be toggled by custom mapping: `<leader>tt`.
+vim.o.showtabline = 0
 -- Force enable 24-bit RGB colors
 vim.o.termguicolors = true
 

@@ -43,3 +43,12 @@ vim.keymap.set('n', '<A-PageDown>', '<cmd>tabprevious<CR>', { desc = 'Go to prev
 -- Toggle <something>.
 vim.keymap.set('n', '<leader>tw', '<cmd>set wrap!<CR>',     { desc = 'Toggle line [w]rapping' })
 vim.keymap.set('n', '<leader>ts', '<cmd>set spell!<CR>',    { desc = 'Toggle [s]pell checking' })
+vim.keymap.set('n', '<leader>tt', function()
+  local showtabline = vim.go.showtabline
+
+  if showtabline ~= 0 then
+    vim.go.showtabline = 0 -- Disable tabline.
+  else
+    vim.go.showtabline = 2 -- Always show tabline.
+  end
+end, { desc = 'Toggle [t]abline' })
