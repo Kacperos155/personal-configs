@@ -71,6 +71,15 @@ return {
       end
     end
 
+    -- Show whether spell checking is enabled and for what language.
+    local function spell_checking()
+      if vim.wo.spell then
+        return ' ' .. vim.bo.spelllang
+      else
+        return ''
+      end
+    end
+
     require('lualine').setup({
       options = {
         globalstatus = use_global_statusline,
@@ -79,7 +88,7 @@ return {
         lualine_a = {'mode'},
         lualine_b = {filename_statusline},
         lualine_c = {{'diff', source = gitsigns_diff_source}},
-        lualine_x = {'diagnostics', {indentation, cond = can_show_extended_info}},
+        lualine_x = {'diagnostics', {indentation, cond = can_show_extended_info}, {spell_checking, cond = can_show_extended_info}},
         lualine_y = {encoding, 'filetype'},
         lualine_z = {window_size, {'location', icon = ' ', cond = can_show_extended_info}},
       },
