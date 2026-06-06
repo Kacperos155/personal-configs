@@ -27,5 +27,10 @@ return {
       Git.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') })
     end,  {desc = '[R]eset selected lines'})
 
+    -- List changes
+    vim.keymap.set('n', '<leader>hL', function()
+      Git.setqflist('all')
+    end,  {desc = '[L]ist changes in all files (quickfix)' })
+    vim.keymap.set('n', '<leader>hl', Git.setloclist,   {desc = '[L]ist changes in this file (loclist)'})
   end,
 }
