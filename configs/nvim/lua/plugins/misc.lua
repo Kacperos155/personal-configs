@@ -22,6 +22,7 @@ return {
       spec = {
         { '<leader>o', group = '[O]pen' },
         { '<leader>t', group = '[T]oggle' },
+        { '<leader>h', group = 'Git [H]unks', mode = { 'n', 'v' } },
       },
     },
   },
