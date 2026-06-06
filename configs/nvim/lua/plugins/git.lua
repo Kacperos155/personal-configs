@@ -20,5 +20,12 @@ return {
       Git.stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })
     end,  {desc = '[S]tage/unstage selected lines'})
 
+    -- Reset changes
+    vim.keymap.set('n', '<leader>hR', Git.reset_buffer,   {desc = '[R]eset whole buffer'})
+    vim.keymap.set('n', '<leader>hr', Git.reset_hunk,     {desc = '[R]eset hunk at the cursor'})
+    vim.keymap.set('v', '<leader>hr', function()
+      Git.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') })
+    end,  {desc = '[R]eset selected lines'})
+
   end,
 }
