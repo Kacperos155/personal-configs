@@ -1,0 +1,6 @@
+# Docs: https://yazi-rs.github.io/docs/configuration/yazi
+
+[opener]
+edit = [
+    { run = "nvim %s", block = true, desc = "NeoVim" },
+]
