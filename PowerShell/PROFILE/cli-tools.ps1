@@ -13,3 +13,12 @@ function y {
 function bathelp {
     $input | bat --language=help --plain
 }
+
+# EZA - formatted grid of directories and files
+function lg {
+    eza --group-directories-first --icons --color --grid @args
+}
+# EZA - formatted list of directories and files with "Size" and "Date Modified" columns.
+function ll {
+    eza --group-directories-first --icons --color --long --header --no-permissions --time-style=long-iso @args
+}
