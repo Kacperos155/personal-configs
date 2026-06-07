@@ -19,15 +19,20 @@ vim.keymap.set({ 'n', 'x' }, '<leader>P',  [["+P]],  { desc = 'Paste from the sy
 -- Save file on <Ctrl-S>.
 vim.keymap.set({ 'n', 'v', 'i' }, '<C-S>', '<cmd>write<CR>',    { desc = 'Save file' })
 
--- Move whole lines.
-vim.keymap.set({ 'n', 'x' }, '<A-Up>',      ':move -2<CR>',       { desc = 'Move line up' })
-vim.keymap.set({ 'n', 'x' }, '<A-Down>',    ':move +1<CR>',       { desc = 'Move line down' })
-vim.keymap.set({ 'i',     }, '<A-Up>',      '<C-o>:move -2<CR>',  { desc = 'Move line up' })
-vim.keymap.set({ 'i',     }, '<A-Down>',    '<C-o>:move +1<CR>',  { desc = 'Move line down' })
-vim.keymap.set({ 'n', 'x' }, '<C-A-Up>',    ':move -2<CR>',       { desc = 'Move line up' })
-vim.keymap.set({ 'n', 'x' }, '<C-A-Down>',  ':move +1<CR>',       { desc = 'Move line down' })
-vim.keymap.set({ 'i',     }, '<C-A-Up>',    '<C-o>:move -2<CR>',  { desc = 'Move line up' })
-vim.keymap.set({ 'i',     }, '<C-A-Down>',  '<C-o>:move +1<CR>',  { desc = 'Move line down' })
+-- Move whole lines with <ALT> + <Up/Down>
+vim.keymap.set('n', '<A-Up>',      ':move -2<CR>',       { desc = 'Move line up' })
+vim.keymap.set('n', '<A-Down>',    ':move +1<CR>',       { desc = 'Move line down' })
+vim.keymap.set('i', '<A-Up>',      '<C-o>:move -2<CR>',  { desc = 'Move line up' })
+vim.keymap.set('i', '<A-Down>',    '<C-o>:move +1<CR>',  { desc = 'Move line down' })
+vim.keymap.set('x', '<A-Up>',      ":move '<-2<CR>gv",   { desc = 'Move line up' })
+vim.keymap.set('x', '<A-Down>',    ":move '>+1<CR>gv",   { desc = 'Move line down' })
+-- Move whole lines with <CTRL> + <ALT> + <Up/Down>
+vim.keymap.set('n', '<C-A-Up>',    ':move -2<CR>',       { desc = 'Move line up' })
+vim.keymap.set('n', '<C-A-Down>',  ':move +1<CR>',       { desc = 'Move line down' })
+vim.keymap.set('i', '<C-A-Up>',    '<C-o>:move -2<CR>',  { desc = 'Move line up' })
+vim.keymap.set('i', '<C-A-Down>',  '<C-o>:move +1<CR>',  { desc = 'Move line down' })
+vim.keymap.set('x', '<C-A-Up>',    ":move '<-2<CR>gv",   { desc = 'Move line up' })
+vim.keymap.set('x', '<C-A-Down>',  ":move '>+1<CR>gv",   { desc = 'Move line down' })
 
 -- Do not return to normal mode after changing indentation.
 vim.keymap.set('v', '<', '<gv', {})
