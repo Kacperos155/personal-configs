@@ -34,6 +34,7 @@ require('lazy').setup({
   require 'plugins.treesitter',
   require 'plugins.git',
   require 'plugins.aerial',
+  require 'plugins.csvview',
   require 'plugins.indent-blankline',
   require 'plugins.render-markdown',
   require 'plugins.mini',
