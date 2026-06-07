@@ -39,6 +39,7 @@ require('lazy').setup({
   require 'plugins.render-markdown',
   require 'plugins.mini',
   require 'plugins.misc',
+  require 'plugins.quicker',
 })
 
 -- Enable Treesitter syntax parsing.
