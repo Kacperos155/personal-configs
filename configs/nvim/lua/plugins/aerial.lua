@@ -24,5 +24,9 @@ return {
     vim.keymap.set('n', '<leader>ta', function()
       Aerial.toggle({focus = false})
     end, {desc = 'Toggle [a]erial / symbols window'})
+
+    vim.keymap.set('n', '<leader>oa', function()
+      Aerial.nav_toggle()
+    end, {desc = 'Open [a]erial / symbols navigation window'})
   end,
 }
