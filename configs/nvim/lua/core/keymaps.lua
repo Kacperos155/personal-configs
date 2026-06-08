@@ -57,3 +57,8 @@ vim.keymap.set('n', '<leader>tt', function()
     vim.go.showtabline = 2 -- Always show tabline.
   end
 end, { desc = 'Toggle [t]abline' })
+
+vim.keymap.set('n', '<leader>oy', function()
+  local yazi = require("yazi")
+  yazi.pick_files()
+end, { desc = 'Open files via [Y]azi' })
