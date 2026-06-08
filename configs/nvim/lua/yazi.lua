@@ -4,10 +4,7 @@ local function check_executable()
   if vim.fn.executable('yazi') == 1 then
     return true
   else
-    vim.notify(
-      "[Yazi] Executable was not found in the PATH!",
-      vim.log.levels.ERROR
-    )
+    vim.notify("[Yazi] Executable was not found in the PATH!", vim.log.levels.ERROR)
     return false
   end
 end
@@ -60,43 +57,38 @@ function M.pick_files()
   -- Create a temporary file for Yazi output.
   local chooser_file = vim.fn.tempname()
 
-  vim.fn.jobstart(
-    { 'yazi', '--chooser-file', chooser_file },
-    {
-      term = true,
-      on_exit = function()
-        -- Parse and clean up the result of running Yazi.
-        vim.schedule(function()
-          local files = {}
+  vim.fn.jobstart({ 'yazi', '--chooser-file', chooser_file }, {
+    term = true,
+    on_exit = function()
+      -- Parse and clean up the result of running Yazi.
+      vim.schedule(function()
+        local files = {}
 
-          -- Check if the chooser file exists.
-          if vim.fn.filereadable(chooser_file) == 1 then
-            files = get_files(chooser_file)
+        -- Check if the chooser file exists.
+        if vim.fn.filereadable(chooser_file) == 1 then
+          files = get_files(chooser_file)
 
-            if vim.fn.delete(chooser_file) ~= 0 then
-              vim.notify(
-                "[Yazi] Temporary file deletion failed: '" .. chooser_file .. "'!",
-                vim.log.levels.ERROR
-              )
+          if vim.fn.delete(chooser_file) ~= 0 then
+            vim.notify("[Yazi] Temporary file deletion failed: '" .. chooser_file .. "'!", vim.log.levels.ERROR)
+          end
+        end
+
+        -- Open files in the original window.
+        if vim.api.nvim_win_is_valid(origin_window) then
+          vim.api.nvim_win_call(origin_window, function()
+            vim.wo[origin_window].winfixbuf = false
+
+            if (not open_files(files)) and (vim.api.nvim_buf_is_valid(origin_buffer)) then
+              vim.api.nvim_win_set_buf(origin_window, origin_buffer)
             end
-          end
+          end)
+        end
 
-          -- Open files in the original window.
-          if vim.api.nvim_win_is_valid(origin_window) then
-            vim.api.nvim_win_call(origin_window, function()
-              vim.wo[origin_window].winfixbuf = false
-
-              if (not open_files(files)) and (vim.api.nvim_buf_is_valid(origin_buffer)) then
-                vim.api.nvim_win_set_buf(origin_window, origin_buffer)
-              end
-            end)
-          end
-
-          -- Remove the temporary buffer without throwing errors.
-          pcall(vim.api.nvim_buf_delete, terminal_buffer, { force = true })
-        end)
-      end
-    })
+        -- Remove the temporary buffer without throwing errors.
+        pcall(vim.api.nvim_buf_delete, terminal_buffer, { force = true })
+      end)
+    end,
+  })
 
   -- Change mode to 'terminal'.
   vim.cmd.startinsert()

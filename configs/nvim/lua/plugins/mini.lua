@@ -35,7 +35,7 @@ return {
 
       vim.keymap.set('n', '<A-W>', function()
         M.delete()
-      end, {desc = 'Remove the current buffer'})
+      end, { desc = 'Remove the current buffer' })
     end,
   },
 }

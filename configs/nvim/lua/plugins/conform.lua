@@ -17,10 +17,10 @@ return {
 
     vim.keymap.set('n', '<leader>f', function()
       Conform.format()
-    end, {desc = '[F]ormat whole buffer'})
+    end, { desc = '[F]ormat whole buffer' })
 
     vim.keymap.set('x', '<leader>f', function()
       Conform.format()
-    end, {desc = '[F]ormat selected text'})
+    end, { desc = '[F]ormat selected text' })
   end,
 }

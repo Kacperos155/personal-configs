@@ -14,10 +14,10 @@ return {
 
     vim.keymap.set('n', '<leader>tq', function()
       Quicker.toggle({ focus = false })
-    end, {desc = 'Toggle [q]uickfix window'})
+    end, { desc = 'Toggle [q]uickfix window' })
 
     vim.keymap.set('n', '<leader>tl', function()
       Quicker.toggle({ focus = false, loclist = true })
-    end, {desc = 'Toggle [l]oclist window'})
+    end, { desc = 'Toggle [l]oclist window' })
   end,
 }

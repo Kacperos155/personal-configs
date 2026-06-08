@@ -12,12 +12,12 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>')
 
 -- Interactions with the system clipboard.
 vim.keymap.set({ 'n', 'x' }, '<leader>y',  [["+y]],  { desc = 'Yank to the system clipboard' })
-vim.keymap.set({ 'n',     }, '<leader>Y',  [["+y$]], { desc = 'Yank line from this point to the system clipboard' })
+vim.keymap.set({ 'n'      }, '<leader>Y',  [["+y$]], { desc = 'Yank line from this point to the system clipboard' })
 vim.keymap.set({ 'n', 'x' }, '<leader>p',  [["+p]],  { desc = 'Paste from the system clipboard (after cursor)' })
 vim.keymap.set({ 'n', 'x' }, '<leader>P',  [["+P]],  { desc = 'Paste from the system clipboard (before cursor)' })
 
 -- Save file on <Ctrl-S>.
-vim.keymap.set({ 'n', 'v', 'i' }, '<C-S>', '<cmd>write<CR>',    { desc = 'Save file' })
+vim.keymap.set({ 'n', 'v', 'i' }, '<C-S>', '<cmd>write<CR>', { desc = 'Save file' })
 
 -- Move whole lines with <ALT> + <Up/Down>
 vim.keymap.set('n', '<A-Up>',      ':move -2<CR>',       { desc = 'Move line up' })

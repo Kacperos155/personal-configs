@@ -4,7 +4,6 @@ return {
   dependencies = { 'nvim-tree/nvim-web-devicons' },
 
   config = function()
-
     -- Option to use a single global statusline.
     -- If false, every window has its own statusline.
     -- If true, every window displays a filename in the bar at the top of the window.
@@ -42,7 +41,7 @@ return {
       icon = '󰀬 ',
       cond = function()
         return vim.bo.fileencoding ~= 'utf-8'
-      end
+      end,
     }
 
     -- Use data from "lewis6991/gitsigns.nvim" as a source for diff info.
@@ -52,7 +51,7 @@ return {
         return {
           added = gitsigns.added,
           modified = gitsigns.changed,
-          removed = gitsigns.removed
+          removed = gitsigns.removed,
         }
       end
     end
@@ -87,26 +86,26 @@ return {
         globalstatus = use_global_statusline,
       },
       sections = {
-        lualine_a = {'mode'},
-        lualine_b = {filename_statusline},
-        lualine_c = {{'diff', source = gitsigns_diff_source}},
+        lualine_a = { 'mode' },
+        lualine_b = { filename_statusline },
+        lualine_c = { { 'diff', source = gitsigns_diff_source } },
         lualine_x = {
           'diagnostics',
-          {indentation, cond = can_show_extended_info},
-          {spell_checking, cond = can_show_extended_info}
+          { indentation, cond = can_show_extended_info },
+          { spell_checking, cond = can_show_extended_info },
         },
         lualine_y = {
           encoding,
-          'filetype'
+          'filetype',
         },
         lualine_z = {
           window_size,
-          {'location', icon = ' ', cond = can_show_extended_info}
+          { 'location', icon = ' ', cond = can_show_extended_info },
         },
       },
       inactive_sections = {
         lualine_a = {},
-        lualine_b = use_global_statusline and {} or {filename_statusline},
+        lualine_b = use_global_statusline and {} or { filename_statusline },
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},
@@ -114,19 +113,19 @@ return {
       },
       winbar = {
         lualine_a = {},
-        lualine_b = use_global_statusline and {filename_winbar} or {},
+        lualine_b = use_global_statusline and { filename_winbar } or {},
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},
-        lualine_z = {}
+        lualine_z = {},
       },
       inactive_winbar = {
         lualine_a = {},
-        lualine_b = use_global_statusline and {filename_winbar} or {},
+        lualine_b = use_global_statusline and { filename_winbar } or {},
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},
-        lualine_z = {}
+        lualine_z = {},
       },
       extensions = {
         'aerial',
@@ -136,5 +135,5 @@ return {
 
     -- Avoid duplicate mode display in the command line.
     vim.o.showmode = false
-  end
+  end,
 }

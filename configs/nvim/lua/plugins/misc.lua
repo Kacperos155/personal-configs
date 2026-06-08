@@ -14,7 +14,7 @@ return {
       -- Delay before showing the popup. Can be a number or a function that returns a number.
       ---@type number | fun(ctx: { keys: string, mode: string, plugin?: string }):number
       delay = function(ctx)
-          return ctx.plugin and 0 or 1000 -- 0s for plugins (marks/registers/spelling) and 1s otherwise
+        return ctx.plugin and 0 or 1000 -- 0s for plugins (marks/registers/spelling) and 1s otherwise
       end,
 
       --- Custom mapping groups.
@@ -46,7 +46,7 @@ return {
     -- High-performance color highlighter.
     -- https://github.com/catgoose/nvim-colorizer.lua
     'catgoose/nvim-colorizer.lua',
-    event = {"BufReadPre", "InsertEnter"},
+    event = { "BufReadPre", "InsertEnter" },
     opts = {
       options = {
         parsers = {
