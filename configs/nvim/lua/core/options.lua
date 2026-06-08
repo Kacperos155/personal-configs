@@ -6,7 +6,7 @@
 
 -- [Core behavior]
 -- Enable mouse in all modes.
-vim.o.mouse = 'a'
+vim.o.mouse = "a"
 -- If performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s).
 vim.o.confirm = true
@@ -27,7 +27,7 @@ vim.o.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 10
 -- Always show the sign column. Prevents text from shifting when signs appear.
-vim.o.signcolumn = 'yes'
+vim.o.signcolumn = "yes"
 -- Disable showing the tabline. This can be toggled by custom mapping: `<leader>tt`.
 vim.o.showtabline = 0
 -- Force enable 24-bit RGB colors
@@ -40,16 +40,16 @@ vim.o.splitbelow = true
 
 -- [Popup menus]
 vim.o.pumblend = 3
-vim.o.pumborder = 'single'
+vim.o.pumborder = "single"
 vim.o.pumheight = 10
 
 -- [Whitespaces]
 -- Sets how neovim will display certain whitespace characters in the editor.
 vim.o.list = true
 vim.opt.listchars = {
-  tab = '» ',
-  trail = '·',
-  nbsp = '␣',
+  tab = "» ",
+  trail = "·",
+  nbsp = "␣",
 }
 -- Display <TAB> as 4 spaces.
 vim.o.tabstop = 4
@@ -75,8 +75,8 @@ vim.o.smartcase = true
 vim.o.foldlevelstart = 99
 -- Use indentation-based folds by default.
 -- Treesitter may override this for supported filetypes.
-vim.o.foldmethod = 'indent'
+vim.o.foldmethod = "indent"
 
 -- [Autocompletion]
 vim.o.autocomplete = true
-vim.o.completeopt = 'menuone,noselect'
+vim.o.completeopt = "menuone,noselect"

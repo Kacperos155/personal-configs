@@ -1,7 +1,7 @@
 local M = {}
 
 local function check_executable()
-  if vim.fn.executable('yazi') == 1 then
+  if vim.fn.executable("yazi") == 1 then
     return true
   else
     vim.notify("[Yazi] Executable was not found in the PATH!", vim.log.levels.ERROR)
@@ -14,7 +14,7 @@ local function get_files(chooser_file)
   local files = {}
 
   for _, line in ipairs(vim.fn.readfile(chooser_file)) do
-    if line ~= '' then
+    if line ~= "" then
       table.insert(files, line)
     end
   end
@@ -57,7 +57,7 @@ function M.pick_files()
   -- Create a temporary file for Yazi output.
   local chooser_file = vim.fn.tempname()
 
-  vim.fn.jobstart({ 'yazi', '--chooser-file', chooser_file }, {
+  vim.fn.jobstart({ "yazi", "--chooser-file", chooser_file }, {
     term = true,
     on_exit = function()
       -- Parse and clean up the result of running Yazi.

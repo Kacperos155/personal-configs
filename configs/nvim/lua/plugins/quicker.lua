@@ -1,7 +1,7 @@
 -- Improved UI and workflow for quickfix & loclist.
 -- https://github.com/stevearc/quicker.nvim
 return {
-  'stevearc/quicker.nvim',
+  "stevearc/quicker.nvim",
   ft = "qf",
 
   ---@module "quicker"
@@ -9,15 +9,15 @@ return {
   opts = {},
 
   config = function(_, opts)
-    local Quicker = require('quicker')
+    local Quicker = require("quicker")
     Quicker.setup(opts)
 
-    vim.keymap.set('n', '<leader>tq', function()
+    vim.keymap.set("n", "<leader>tq", function()
       Quicker.toggle({ focus = false })
-    end, { desc = 'Toggle [q]uickfix window' })
+    end, { desc = "Toggle [q]uickfix window" })
 
-    vim.keymap.set('n', '<leader>tl', function()
+    vim.keymap.set("n", "<leader>tl", function()
       Quicker.toggle({ focus = false, loclist = true })
-    end, { desc = 'Toggle [l]oclist window' })
+    end, { desc = "Toggle [l]oclist window" })
   end,
 }

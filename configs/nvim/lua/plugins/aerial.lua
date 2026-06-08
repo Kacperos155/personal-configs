@@ -1,7 +1,7 @@
 -- A code outline window for skimming and quick navigation.
 -- https://github.com/stevearc/aerial.nvim
 return {
-  'stevearc/aerial.nvim',
+  "stevearc/aerial.nvim",
   opts = {
     -- A list of symbol types to display.
     filter_kind = {
@@ -18,15 +18,15 @@ return {
   },
 
   config = function(_, opts)
-    local Aerial = require('aerial')
+    local Aerial = require("aerial")
     Aerial.setup(opts)
 
-    vim.keymap.set('n', '<leader>ta', function()
+    vim.keymap.set("n", "<leader>ta", function()
       Aerial.toggle({ focus = false })
-    end, { desc = 'Toggle [a]erial / symbols window' })
+    end, { desc = "Toggle [a]erial / symbols window" })
 
-    vim.keymap.set('n', '<leader>oa', function()
+    vim.keymap.set("n", "<leader>oa", function()
       Aerial.nav_toggle()
-    end, { desc = 'Open [a]erial / symbols navigation window' })
+    end, { desc = "Open [a]erial / symbols navigation window" })
   end,
 }
