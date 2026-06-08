@@ -30,6 +30,7 @@ rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   require 'plugins.theme',
+  require 'plugins.mason',
   require 'plugins.lualine',
   require 'plugins.treesitter',
   require 'plugins.git',
