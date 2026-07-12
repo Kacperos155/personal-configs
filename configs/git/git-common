@@ -22,3 +22,5 @@
     guitool = vscode
 [pull]
     ff = only
+[rebase]
+    autoSquash = true
