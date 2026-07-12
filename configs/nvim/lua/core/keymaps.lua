@@ -48,16 +48,24 @@ vim.keymap.set("n", "<A-PageDown>", "<cmd>tabprevious<CR>", { desc = "Go to prev
 -- Toggle <something>.
 vim.keymap.set("n", "<leader>tw", "<cmd>set wrap!<CR>",   { desc = "Toggle line [w]rapping" })
 vim.keymap.set("n", "<leader>ts", "<cmd>set spell!<CR>",  { desc = "Toggle [s]pell checking" })
+-- Toggle tabline.
 vim.keymap.set("n", "<leader>tt", function()
-  local showtabline = vim.go.showtabline
-
-  if showtabline ~= 0 then
+  if vim.go.showtabline ~= 0 then
     vim.go.showtabline = 0 -- Disable tabline.
   else
     vim.go.showtabline = 2 -- Always show tabline.
   end
 end, { desc = "Toggle [t]abline" })
+-- Toggle diff mode.
+vim.keymap.set("n", "<leader>td", function()
+  if vim.wo.diff == false then
+    vim.cmd.diffthis()
+  else
+    vim.cmd.diffoff()
+  end
+end, { desc = "Toggle [d]iff mode" })
 
+-- Open <something>.
 vim.keymap.set("n", "<leader>oy", function()
   local yazi = require("yazi")
   yazi.pick_files()
