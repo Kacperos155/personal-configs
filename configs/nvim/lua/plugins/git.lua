@@ -32,5 +32,22 @@ return {
       Git.setqflist("all")
     end, { desc = "[L]ist changes in all files (quickfix)" })
     vim.keymap.set("n", "<leader>hl", Git.setloclist, { desc = "[L]ist changes in this file (loclist)" })
+
+    -- Navigation
+    vim.keymap.set({ "n", "v" }, "]c", function()
+      if vim.wo.diff then
+        vim.cmd.normal({ vim.v.count1 .. "]c", bang = true })
+      else
+        Git.nav_hunk("next", { target = "all" })
+      end
+    end, { desc = "Next change" })
+
+    vim.keymap.set({ "n", "v" }, "[c", function()
+      if vim.wo.diff then
+        vim.cmd.normal({ vim.v.count1 .. "[c", bang = true })
+      else
+        Git.nav_hunk("prev", { target = "all" })
+      end
+    end, { desc = "Previous change" })
   end,
 }
