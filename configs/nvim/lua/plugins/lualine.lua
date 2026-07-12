@@ -36,6 +36,15 @@ return {
       symbols = filename_symbols,
     }
 
+    -- Show whether diff mode is enabled for given window.
+    local function diffmode_status()
+      if vim.wo.diff then
+        return " Diff"
+      else
+        return ""
+      end
+    end
+
     local encoding = {
       "encoding",
       icon = "󰀬 ",
@@ -86,9 +95,14 @@ return {
         globalstatus = use_global_statusline,
       },
       sections = {
-        lualine_a = { "mode" },
+        lualine_a = {
+          "mode",
+          (use_global_statusline and "" or { diffmode_status }),
+        },
         lualine_b = { filename_statusline },
-        lualine_c = { { "diff", source = gitsigns_diff_source } },
+        lualine_c = {
+          { "diff", source = gitsigns_diff_source },
+        },
         lualine_x = {
           "diagnostics",
           { indentation, cond = can_show_extended_info },
@@ -104,7 +118,7 @@ return {
         },
       },
       inactive_sections = {
-        lualine_a = {},
+        lualine_a = use_global_statusline and {} or { diffmode_status },
         lualine_b = use_global_statusline and {} or { filename_statusline },
         lualine_c = {},
         lualine_x = {},
@@ -112,7 +126,7 @@ return {
         lualine_z = {},
       },
       winbar = {
-        lualine_a = {},
+        lualine_a = use_global_statusline and { diffmode_status } or {},
         lualine_b = use_global_statusline and { filename_winbar } or {},
         lualine_c = {},
         lualine_x = {},
@@ -120,7 +134,7 @@ return {
         lualine_z = {},
       },
       inactive_winbar = {
-        lualine_a = {},
+        lualine_a = use_global_statusline and { diffmode_status } or {},
         lualine_b = use_global_statusline and { filename_winbar } or {},
         lualine_c = {},
         lualine_x = {},
