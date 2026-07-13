@@ -14,6 +14,12 @@ function bathelp {
     $input | bat --language=help --plain
 }
 
+# Ripgrep via Delta pager.
+# https://dandavison.github.io/delta/grep.html
+function rgd {
+    rg --json @args | delta
+}
+
 # EZA - formatted grid of directories and files
 function lg {
     eza --group-directories-first --icons --color --grid @args
