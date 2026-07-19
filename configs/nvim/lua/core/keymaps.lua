@@ -9,6 +9,8 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Use double <Esc> to exit terminal mode.
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
+-- Use double <CTRL-W> to exit terminal mode and change current window.
+vim.keymap.set("t", "<C-w><C-w>", "<C-\\><C-n><C-w><C-w>")
 
 -- Save file on <Ctrl-S>.
 vim.keymap.set({ "n", "v", "i" }, "<C-S>", "<cmd>write<CR>", { desc = "Save file" })
