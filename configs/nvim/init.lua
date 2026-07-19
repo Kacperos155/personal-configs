@@ -44,6 +44,7 @@ require("lazy").setup({
   require("plugins.mini"),
   require("plugins.misc"),
   require("plugins.quicker"),
+  require("plugins.which-key"),
 })
 
 -- Enable Treesitter syntax parsing.

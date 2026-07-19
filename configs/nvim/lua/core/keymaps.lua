@@ -22,10 +22,10 @@ vim.keymap.set("v", ">", ">gv", {})
 -- stylua: ignore start
 
 -- Interactions with the system clipboard.
-vim.keymap.set({ "n", "x" }, "<leader>y", [["+y]],  { desc = "Yank to the system clipboard" })
-vim.keymap.set({ "n"      }, "<leader>Y", [["+y$]], { desc = "Yank line from this point to the system clipboard" })
-vim.keymap.set({ "n", "x" }, "<leader>p", [["+p]],  { desc = "Paste from the system clipboard (after cursor)" })
-vim.keymap.set({ "n", "x" }, "<leader>P", [["+P]],  { desc = "Paste from the system clipboard (before cursor)" })
+vim.keymap.set({ "n", "x" }, "<leader>y", [["+y]],  { desc = "[Y]ank to the system clipboard" })
+vim.keymap.set({ "n"      }, "<leader>Y", [["+y$]], { desc = "[Y]ank line from this point to the system clipboard" })
+vim.keymap.set({ "n", "x" }, "<leader>p", [["+p]],  { desc = "[P]aste from the system clipboard (after cursor)" })
+vim.keymap.set({ "n", "x" }, "<leader>P", [["+P]],  { desc = "[P]aste from the system clipboard (before cursor)" })
 
 -- Move whole lines with <ALT> + <Up/Down>
 vim.keymap.set({ "n", "i" }, "<A-Up>",     "<cmd>move -2<CR>",  { desc = "Move line up" })
