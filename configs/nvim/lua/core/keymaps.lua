@@ -10,14 +10,20 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- Use double <Esc> to exit terminal mode.
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>")
 
+-- Save file on <Ctrl-S>.
+vim.keymap.set({ "n", "v", "i" }, "<C-S>", "<cmd>write<CR>", { desc = "Save file" })
+
+-- Do not return to normal mode after changing indentation.
+vim.keymap.set("v", "<", "<gv", {})
+vim.keymap.set("v", ">", ">gv", {})
+
+-- stylua: ignore start
+
 -- Interactions with the system clipboard.
 vim.keymap.set({ "n", "x" }, "<leader>y", [["+y]],  { desc = "Yank to the system clipboard" })
 vim.keymap.set({ "n"      }, "<leader>Y", [["+y$]], { desc = "Yank line from this point to the system clipboard" })
 vim.keymap.set({ "n", "x" }, "<leader>p", [["+p]],  { desc = "Paste from the system clipboard (after cursor)" })
 vim.keymap.set({ "n", "x" }, "<leader>P", [["+P]],  { desc = "Paste from the system clipboard (before cursor)" })
-
--- Save file on <Ctrl-S>.
-vim.keymap.set({ "n", "v", "i" }, "<C-S>", "<cmd>write<CR>", { desc = "Save file" })
 
 -- Move whole lines with <ALT> + <Up/Down>
 vim.keymap.set({ "n", "i" }, "<A-Up>",     "<cmd>move -2<CR>",  { desc = "Move line up" })
@@ -30,10 +36,6 @@ vim.keymap.set({ "n", "i" }, "<C-A-Down>", "<cmd>move +1<CR>",  { desc = "Move l
 vim.keymap.set("x",          "<C-A-Up>",   ":move '<-2<CR>gv",  { desc = "Move line up" })
 vim.keymap.set("x",          "<C-A-Down>", ":move '>+1<CR>gv",  { desc = "Move line down" })
 
--- Do not return to normal mode after changing indentation.
-vim.keymap.set("v", "<", "<gv", {})
-vim.keymap.set("v", ">", ">gv", {})
-
 -- Change active buffer (file view).
 vim.keymap.set("n", "<C-PageUp>",   "<cmd>bnext<CR>",       { desc = "Go to next buffer" })
 vim.keymap.set("n", "<C-PageDown>", "<cmd>bprevious<CR>",   { desc = "Go to previous buffer" })
@@ -41,9 +43,11 @@ vim.keymap.set("n", "<C-PageDown>", "<cmd>bprevious<CR>",   { desc = "Go to prev
 vim.keymap.set("n", "<A-PageUp>",   "<cmd>tabnext<CR>",     { desc = "Go to next tab page" })
 vim.keymap.set("n", "<A-PageDown>", "<cmd>tabprevious<CR>", { desc = "Go to previous tab page" })
 
+-- stylua: ignore end
+
 -- Toggle <something>.
-vim.keymap.set("n", "<leader>tw", "<cmd>set wrap!<CR>",   { desc = "Toggle line [w]rapping" })
-vim.keymap.set("n", "<leader>ts", "<cmd>set spell!<CR>",  { desc = "Toggle [s]pell checking" })
+vim.keymap.set("n", "<leader>tw", "<cmd>set wrap!<CR>", { desc = "Toggle line [w]rapping" })
+vim.keymap.set("n", "<leader>ts", "<cmd>set spell!<CR>", { desc = "Toggle [s]pell checking" })
 -- Toggle tabline.
 vim.keymap.set("n", "<leader>tt", function()
   if vim.go.showtabline ~= 0 then
