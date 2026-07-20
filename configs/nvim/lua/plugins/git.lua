@@ -33,6 +33,9 @@ return {
     end, { desc = "[L]ist changes in all files (quickfix)" })
     vim.keymap.set("n", "<leader>hl", Git.setloclist, { desc = "[L]ist changes in this file (loclist)" })
 
+    -- Preview changes
+    vim.keymap.set("n", "<leader>hp", Git.preview_hunk, { desc = "[P]review hunk" })
+
     -- Navigation
     local map_hunk_navigation = function(keymap, direction, target, description)
       vim.keymap.set({ "n", "v" }, keymap, function()
