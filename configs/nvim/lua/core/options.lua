@@ -80,3 +80,8 @@ vim.o.foldmethod = "indent"
 -- [Autocompletion]
 vim.o.autocomplete = true
 vim.o.completeopt = "menuone,noselect"
+
+-- [Diff mode]
+-- Use word-level highlighting for inline differences.
+vim.opt.diffopt:remove("inline:char")
+vim.opt.diffopt:append("inline:word")
