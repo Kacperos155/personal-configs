@@ -34,20 +34,20 @@ return {
     vim.keymap.set("n", "<leader>hl", Git.setloclist, { desc = "[L]ist changes in this file (loclist)" })
 
     -- Navigation
-    vim.keymap.set({ "n", "v" }, "]c", function()
-      if vim.wo.diff then
-        vim.cmd.normal({ vim.v.count1 .. "]c", bang = true })
-      else
-        Git.nav_hunk("next", { target = "all" })
-      end
-    end, { desc = "Next change" })
+    local map_hunk_navigation = function(keymap, direction, target, description)
+      vim.keymap.set({ "n", "v" }, keymap, function()
+        if vim.wo.diff then
+          local diff_keymap = direction == "next" and "]c" or "[c"
+          vim.cmd.normal({ vim.v.count1 .. diff_keymap, bang = true })
+        else
+          Git.nav_hunk(direction, { target = target })
+        end
+      end, { desc = description })
+    end
 
-    vim.keymap.set({ "n", "v" }, "[c", function()
-      if vim.wo.diff then
-        vim.cmd.normal({ vim.v.count1 .. "[c", bang = true })
-      else
-        Git.nav_hunk("prev", { target = "all" })
-      end
-    end, { desc = "Previous change" })
+    map_hunk_navigation("]c", "next", "all", "Next change")
+    map_hunk_navigation("[c", "prev", "all", "Previous change")
+    map_hunk_navigation("]C", "next", "unstaged", "Next unstaged change")
+    map_hunk_navigation("[C", "prev", "unstaged", "Previous unstaged change")
   end,
 }
