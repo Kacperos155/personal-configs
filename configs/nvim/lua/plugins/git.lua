@@ -13,6 +13,10 @@ return {
       Git.blame({ ignore_whitespace = true })
     end, { desc = "Open git-[b]lame window" })
 
+    vim.keymap.set("n", "<leader>hb", function()
+      Git.blame_line({ ignore_whitespace = true })
+    end, { desc = "[B]lame this line" })
+
     -- Stage changes
     vim.keymap.set("n", "<leader>hS", Git.stage_buffer, { desc = "[S]tage whole buffer" })
     vim.keymap.set("n", "<leader>hs", Git.stage_hunk,   { desc = "[S]tage/unstage hunk at the cursor" })
