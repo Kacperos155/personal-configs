@@ -4,3 +4,6 @@
 [tig]
     # Speed up the main view by enforcing the default limit of loaded commits.
     main-options = --max-count=1000
+
+    # Force UTF-8 characters for commit graph drawing.
+    line-graphics = utf-8
