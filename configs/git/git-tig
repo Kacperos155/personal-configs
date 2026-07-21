@@ -1,0 +1,6 @@
+# Common settings for tig, a TUI Git repository browser
+# https://jonas.github.io/tig/
+
+[tig]
+    # Speed up the main view by enforcing the default limit of loaded commits.
+    main-options = --max-count=1000
