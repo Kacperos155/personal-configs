@@ -7,3 +7,6 @@
 
     # Force UTF-8 characters for commit graph drawing.
     line-graphics = utf-8
+
+    # Main view: display relative commit dates.
+    main-view-date-display = relative
