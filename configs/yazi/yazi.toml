@@ -4,3 +4,8 @@
 edit = [
     { run = "nvim %s", block = true, desc = "NeoVim" },
 ]
+
+[open]
+prepend_rules = [
+    { mime = "text/html", use = [ "open", "edit", "reveal" ] },
+]
