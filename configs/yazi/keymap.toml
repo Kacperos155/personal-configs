@@ -16,3 +16,9 @@ on   = "!"
 for  = "windows"
 run  = 'shell "pwsh.exe" --block'
 desc = "Open PowerShell here"
+
+# Quick navigation using jump-to-char plugin.
+[[mgr.prepend_keymap]]
+on   = "f"
+run  = "plugin jump-to-char"
+desc = "Jump to char"

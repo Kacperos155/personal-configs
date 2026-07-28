@@ -3,3 +3,6 @@ ya pkg add yazi-rs/flavors:catppuccin-mocha
 
 # https://github.com/yazi-rs/plugins/tree/main/full-border.yazi
 ya pkg add yazi-rs/plugins:full-border
+
+# https://github.com/yazi-rs/plugins/tree/main/jump-to-char.yazi
+ya pkg add yazi-rs/plugins:jump-to-char
