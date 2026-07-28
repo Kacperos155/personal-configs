@@ -9,6 +9,7 @@ if (-not (Test-Path $yaziConfigDir)) {
 
 $configFiles = @(
     "keymap.toml"
+    "theme.toml"
     "yazi.toml"
 )
 
