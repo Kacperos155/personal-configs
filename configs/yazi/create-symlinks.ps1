@@ -8,6 +8,7 @@ if (-not (Test-Path $yaziConfigDir)) {
 }
 
 $configFiles = @(
+    "init.lua"
     "keymap.toml"
     "theme.toml"
     "yazi.toml"
