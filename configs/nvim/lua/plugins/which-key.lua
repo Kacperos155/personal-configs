@@ -2,6 +2,8 @@
 -- https://github.com/folke/which-key.nvim
 return {
   "folke/which-key.nvim",
+  event = "VeryLazy",
+
   opts = {
     -- Delay before showing the popup. Can be a number or a function that returns a number.
     ---@type number | fun(ctx: { keys: string, mode: string, plugin?: string }):number

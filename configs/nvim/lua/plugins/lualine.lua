@@ -2,6 +2,7 @@
 return {
   "nvim-lualine/lualine.nvim",
   dependencies = { "nvim-tree/nvim-web-devicons" },
+  event = "VimEnter",
 
   config = function()
     -- Option to use a single global statusline.

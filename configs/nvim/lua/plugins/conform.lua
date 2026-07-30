@@ -2,6 +2,8 @@
 -- https://github.com/stevearc/conform.nvim
 return {
   "stevearc/conform.nvim",
+  event = "VeryLazy",
+
   opts = {
     formatters_by_ft = {
       cpp     = { "clang-format" },

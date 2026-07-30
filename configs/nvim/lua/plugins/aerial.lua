@@ -2,6 +2,8 @@
 -- https://github.com/stevearc/aerial.nvim
 return {
   "stevearc/aerial.nvim",
+  event = "VeryLazy",
+
   opts = {
     -- A list of symbol types to display.
     filter_kind = {
