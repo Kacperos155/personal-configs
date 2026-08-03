@@ -22,3 +22,8 @@ desc = "Open PowerShell here"
 on   = "f"
 run  = "plugin jump-to-char"
 desc = "Jump to char"
+# Remap file filter from <f> to <F>.
+[[mgr.prepend_keymap]]
+on   = "F"
+run  = "filter --smart"
+desc = "Filter files"
