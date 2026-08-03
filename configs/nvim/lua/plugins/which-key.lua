@@ -16,6 +16,10 @@ return {
     ---@type wk.Spec
     spec = {
       -- stylua: ignore start
+      { "<leader>f", group = "[F]ind", icon = { icon = " ", color = "green" }, mode = { "n", "x" } },
+        { "<leader>ff", icon = { icon = "󰱼 ", color = "green" }                      }, -- Files
+        { "<leader>fg", icon = { icon = "󱎸 ", color = "green" }                      }, -- Grep
+        { "<leader>fs", icon = { icon = "󱎸 ", color = "green" }, mode = { "n", "x" } }, -- Grep selection
       { "<leader>o", group = "[O]pen", icon = { icon = "󱥫 ", color = "blue" } },
         { "<leader>ot", icon = { icon = " ", color = "red"    } }, -- Terminal
         { "<leader>oy", icon = { icon = "󰇥 ", color = "yellow" } }, -- Yazi

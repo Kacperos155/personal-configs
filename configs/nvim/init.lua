@@ -39,6 +39,7 @@ require("lazy").setup({
   require("plugins.aerial"),
   require("plugins.conform"),
   require("plugins.csvview"),
+  require("plugins.fff"),
   require("plugins.indent-blankline"),
   require("plugins.render-markdown"),
   require("plugins.mini"),
