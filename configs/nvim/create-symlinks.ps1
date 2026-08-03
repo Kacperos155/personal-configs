@@ -9,6 +9,7 @@ if (-not (Test-Path $nvimConfigDir)) {
 $configFiles = @(
     "lua",
     "init.lua"
+    "lazy-lock.json"
 )
 
 foreach ($configFile in $configFiles) {
