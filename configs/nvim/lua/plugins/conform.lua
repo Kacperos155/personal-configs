@@ -17,11 +17,11 @@ return {
     local Conform = require("conform")
     Conform.setup(opts)
 
-    vim.keymap.set("n", "<leader>f", function()
+    vim.keymap.set("n", "<leader>F", function()
       Conform.format()
     end, { desc = "[F]ormat whole buffer" })
 
-    vim.keymap.set("x", "<leader>f", function()
+    vim.keymap.set("x", "<leader>F", function()
       Conform.format()
     end, { desc = "[F]ormat selected text" })
   end,

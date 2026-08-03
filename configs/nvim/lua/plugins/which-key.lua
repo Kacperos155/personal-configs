@@ -12,20 +12,21 @@ return {
     end,
 
     --- Custom mapping groups.
+    --- Defaults: https://raw.githubusercontent.com/folke/which-key.nvim/refs/heads/main/lua/which-key/icons.lua
     ---@type wk.Spec
     spec = {
       -- stylua: ignore start
       { "<leader>o", group = "[O]pen", icon = { icon = "󱥫 ", color = "blue" } },
-        { "<leader>ot", icon = { icon = " ", color = "red" } },
-        { "<leader>oy", icon = { icon = "󰇥 ", color = "yellow" } },
+        { "<leader>ot", icon = { icon = " ", color = "red"    } }, -- Terminal
+        { "<leader>oy", icon = { icon = "󰇥 ", color = "yellow" } }, -- Yazi
       { "<leader>t", group = "[T]oggle", icon = { icon = " ", color = "yellow" } },
       { "<leader>h", group = "Git [H]unks", mode = { "n", "v" } },
       -- Main / Without group:
-        { "<leader>f", mode = { "n", "x" }, icon = { icon = " ",  color = "cyan"   } },
-        { "<leader>p", mode = { "n", "x" }, icon = { icon = "󰆒 󰁍", color = "orange" } },
-        { "<leader>P", mode = { "n", "x" }, icon = { icon = "󰆒 󰁍", color = "orange" } },
-        { "<leader>y", mode = { "n", "x" }, icon = { icon = "󰆒 󰁔", color = "cyan"   } },
-        { "<leader>Y",                      icon = { icon = "󰆒 󰁔", color = "cyan"   } },
+        { "<leader>F", icon = { icon = " ",  color = "cyan"   }, mode = { "n", "x" } }, -- Format
+        { "<leader>p", icon = { icon = "󰆒 󰁍", color = "orange" }, mode = { "n", "x" } }, -- Paste
+        { "<leader>P", icon = { icon = "󰆒 󰁍", color = "orange" }, mode = { "n", "x" } }, -- Paste
+        { "<leader>y", icon = { icon = "󰆒 󰁔", color = "cyan"   }, mode = { "n", "x" } }, -- Yank
+        { "<leader>Y", icon = { icon = "󰆒 󰁔", color = "cyan"   }                      }, -- Yank
       -- stylua: ignore end
     },
   },
