@@ -81,7 +81,7 @@ vim.o.foldmethod = "indent"
 -- [Autocompletion]
 vim.o.autocomplete = true
 -- Options for insert completion popup menu.
-vim.o.completeopt = "menuone,noselect"
+vim.o.completeopt = "menuone,noselect,popup"
 -- Sources for insert completion.
 -- Optional `^<number>` suffix sets the (forward) match limit.
 vim.opt.complete = {
@@ -89,6 +89,7 @@ vim.opt.complete = {
   "w^5",  -- Buffers from other windows
   "b^5",  -- Loaded buffers from the buffer list
   "u^5",  -- Unloaded buffers from the buffer list
+  "o^10", -- LSP omni completion (CTRL-X CTRL-O)
 }
 
 -- [Diff mode]
