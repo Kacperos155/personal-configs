@@ -42,6 +42,7 @@ vim.o.splitbelow = true
 vim.o.pumblend = 3
 vim.o.pumborder = "single"
 vim.o.pumheight = 10
+vim.o.pummaxwidth = 120
 
 -- [Whitespaces]
 -- Sets how neovim will display certain whitespace characters in the editor.
@@ -79,7 +80,16 @@ vim.o.foldmethod = "indent"
 
 -- [Autocompletion]
 vim.o.autocomplete = true
+-- Options for insert completion popup menu.
 vim.o.completeopt = "menuone,noselect"
+-- Sources for insert completion.
+-- Optional `^<number>` suffix sets the (forward) match limit.
+vim.opt.complete = {
+  ".^5",  -- Current buffer
+  "w^5",  -- Buffers from other windows
+  "b^5",  -- Loaded buffers from the buffer list
+  "u^5",  -- Unloaded buffers from the buffer list
+}
 
 -- [Diff mode]
 -- Use word-level highlighting for inline differences.
