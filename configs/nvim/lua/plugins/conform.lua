@@ -4,12 +4,20 @@ return {
   "stevearc/conform.nvim",
   event = "VeryLazy",
 
+  init = function()
+    -- Delegate native formatting to Conform.
+    vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+  end,
+
   opts = {
+    -- The following formatters can be installed via mason.nvim.
     formatters_by_ft = {
+      -- stylua: ignore start
       cpp     = { "clang-format" },
       json    = { "jq" },
       lua     = { "stylua" },
       python  = { "ruff_format" },
+      -- stylua: ignore end
     },
   },
 
