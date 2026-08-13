@@ -2,7 +2,14 @@
 -- https://github.com/dmtrKovalenko/fff#fffnvim
 return {
   "dmtrKovalenko/fff.nvim",
-  lazy = false, -- The plugin has internal lazy-loading.
+  -- Lazy-load on "find" key group.
+  -- Since the key mappings are created at plugin load,
+  -- which-key.nvim needs descriptions of these keys to provide info before the plugin is loaded.
+  keys = {
+    { "<leader>ff" },
+    { "<leader>fg" },
+    { "<leader>fs", mode = { "n", "x" } },
+  },
 
   build = function()
     -- Downloads a prebuilt binary or falls back to cargo build.

@@ -17,9 +17,9 @@ return {
     spec = {
       -- stylua: ignore start
       { "<leader>f", group = "[F]ind", icon = { icon = " ", color = "green" }, mode = { "n", "x" } },
-        { "<leader>ff", icon = { icon = "󰱼 ", color = "green" }                      }, -- Files
-        { "<leader>fg", icon = { icon = "󱎸 ", color = "green" }                      }, -- Grep
-        { "<leader>fs", icon = { icon = "󱎸 ", color = "green" }, mode = { "n", "x" } }, -- Grep selection
+        { "<leader>ff", icon = { icon = "󰱼 ", color = "green" }, desc = "Find [f]iles" },
+        { "<leader>fg", icon = { icon = "󱎸 ", color = "green" }, desc = "Find via live [g]rep" },
+        { "<leader>fs", icon = { icon = "󱎸 ", color = "green" }, desc = "Find current [s]election/word", mode = { "n", "x" } },
       { "<leader>o", group = "[O]pen", icon = { icon = "󱥫 ", color = "blue" } },
         { "<leader>ot", icon = { icon = " ", color = "red"    } }, -- Terminal
         { "<leader>oy", icon = { icon = "󰇥 ", color = "yellow" } }, -- Yazi
