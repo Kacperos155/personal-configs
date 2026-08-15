@@ -20,6 +20,8 @@
     # Tools:
     tool = nvimdiff
     guitool = vscode
+[mergetool]
+    keepBackup = false
 [pull]
     ff = only
 [rebase]
