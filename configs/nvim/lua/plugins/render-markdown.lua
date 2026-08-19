@@ -1,4 +1,4 @@
--- A code outline window for skimming and quick navigation.
+-- Markdown rendering for Neovim.
 -- https://github.com/MeanderingProgrammer/render-markdown.nvim
 return {
   "MeanderingProgrammer/render-markdown.nvim",
@@ -7,5 +7,10 @@ return {
 
   ---@module 'render-markdown'
   ---@type render.md.UserConfig
-  opts = {},
+  opts = {
+    sign = {
+      -- Disable sign column rendering.
+      enabled = false,
+    },
+  },
 }
