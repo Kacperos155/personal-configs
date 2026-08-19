@@ -13,7 +13,7 @@ return {
     -- The following formatters can be installed via mason.nvim.
     formatters_by_ft = {
       -- stylua: ignore start
-      cpp     = { "clang-format" },
+      cpp     = { "clang-format", timeout_ms = 3000 },
       json    = { "jq" },
       lua     = { "stylua" },
       python  = { "ruff_format" },
