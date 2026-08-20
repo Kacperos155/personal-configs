@@ -72,3 +72,6 @@ vim.keymap.set("n", "<leader>oy", function()
   local yazi = require("yazi")
   yazi.pick_files()
 end, { desc = "Open files via [Y]azi" })
+
+-- Operations on whole buffers.
+vim.keymap.set("n", "<leader>by", "<cmd>%yank+<CR>", { desc = "[Y]ank the whole buffer to the system clipboard" })

@@ -16,6 +16,8 @@ return {
     ---@type wk.Spec
     spec = {
       -- stylua: ignore start
+      { "<leader>b", group = "[B]uffer", icon = { icon = "󰈔", color = "cyan" } },
+        { "<leader>by", icon = { icon = "󰆒 󰁍", color = "cyan"   } }, -- Yank
       { "<leader>f", group = "[F]ind", icon = { icon = " ", color = "green" }, mode = { "n", "x" } },
         { "<leader>ff", icon = { icon = "󰱼 ", color = "green" }, desc = "Find [f]iles" },
         { "<leader>fg", icon = { icon = "󱎸 ", color = "green" }, desc = "Find via live [g]rep" },
