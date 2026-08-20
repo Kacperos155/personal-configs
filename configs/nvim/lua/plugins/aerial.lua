@@ -17,6 +17,12 @@ return {
       "Namespace",
       "Struct",
     },
+    nav = {
+      keymaps = {
+        ["<Left>"] = "actions.left",
+        ["<Right>"] = "actions.right",
+      },
+    },
   },
 
   config = function(_, opts)
