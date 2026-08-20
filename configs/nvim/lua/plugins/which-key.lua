@@ -27,10 +27,10 @@ return {
       { "<leader>h", group = "Git [H]unks", mode = { "n", "v" } },
       -- Main / Without group:
         { "<leader>F", icon = { icon = " ",  color = "cyan"   }, mode = { "n", "x" } }, -- Format
-        { "<leader>p", icon = { icon = "󰆒 󰁍", color = "orange" }, mode = { "n", "x" } }, -- Paste
-        { "<leader>P", icon = { icon = "󰆒 󰁍", color = "orange" }, mode = { "n", "x" } }, -- Paste
-        { "<leader>y", icon = { icon = "󰆒 󰁔", color = "cyan"   }, mode = { "n", "x" } }, -- Yank
-        { "<leader>Y", icon = { icon = "󰆒 󰁔", color = "cyan"   }                      }, -- Yank
+        { "<leader>p", icon = { icon = "󰆒 󰁔", color = "orange" }, mode = { "n", "x" } }, -- Paste
+        { "<leader>P", icon = { icon = "󰆒 󰁔", color = "orange" }, mode = { "n", "x" } }, -- Paste
+        { "<leader>y", icon = { icon = "󰆒 󰁍", color = "cyan"   }, mode = { "n", "x" } }, -- Yank
+        { "<leader>Y", icon = { icon = "󰆒 󰁍", color = "cyan"   }                      }, -- Yank
       -- stylua: ignore end
     },
   },
