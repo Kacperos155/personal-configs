@@ -42,5 +42,14 @@ return {
     vim.keymap.set({ "n", "x" }, "<leader>fs", function()
       FFF.live_grep_under_cursor()
     end, { desc = "Find current [s]election/word" })
+
+    -- Disable autocompletion in picker.
+    vim.api.nvim_create_autocmd("FileType", {
+      desc = "Disable autocompletion in FFF picker",
+      pattern = "fff_input",
+      callback = function()
+        vim.bo.autocomplete = false
+      end,
+    })
   end,
 }
