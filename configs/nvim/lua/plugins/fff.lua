@@ -21,6 +21,10 @@ return {
       -- File info panel above preview window.
       enabled = false, -- Toggle with <F2>.
     },
+    keymaps = {
+      move_up = { "<Up>" },
+      move_down = { "<Down>" },
+    },
   },
 
   config = function(_, opts)
