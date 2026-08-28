@@ -74,4 +74,5 @@ vim.keymap.set("n", "<leader>oy", function()
 end, { desc = "Open files via [Y]azi" })
 
 -- Operations on whole buffers.
+vim.keymap.set("n", "<leader>br", "<cmd>e<CR>", { desc = "[R]eload current file" })
 vim.keymap.set("n", "<leader>by", "<cmd>%yank+<CR>", { desc = "[Y]ank the whole buffer to the system clipboard" })

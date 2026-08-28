@@ -17,6 +17,7 @@ return {
     spec = {
       -- stylua: ignore start
       { "<leader>b", group = "[B]uffer", icon = { icon = "󰈔", color = "cyan" } },
+        { "<leader>br", icon = { icon = "󰈔 󰑐", color = "green"  } }, -- Reload
         { "<leader>by", icon = { icon = "󰆒 󰁍", color = "cyan"   } }, -- Yank
       { "<leader>f", group = "[F]ind", icon = { icon = " ", color = "green" }, mode = { "n", "x" } },
         { "<leader>ff", icon = { icon = "󰱼 ", color = "green" }, desc = "Find [f]iles" },
