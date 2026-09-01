@@ -14,6 +14,7 @@ return {
     formatters_by_ft = {
       -- stylua: ignore start
       cpp     = { "clang-format", timeout_ms = 3000 },
+      html    = { "djlint", timeout_ms = 3000 },
       json    = { "jq" },
       lua     = { "stylua" },
       python  = { "ruff_format" },
