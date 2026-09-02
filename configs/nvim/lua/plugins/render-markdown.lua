@@ -12,5 +12,12 @@ return {
       -- Disable sign column rendering.
       enabled = false,
     },
+    heading = {
+      border = true,
+      position = "inline",
+      left_pad = 2,
+      right_pad = 2,
+      width = "block",
+    },
   },
 }
