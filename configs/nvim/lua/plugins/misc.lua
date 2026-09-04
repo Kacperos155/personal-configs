@@ -4,7 +4,8 @@ return {
     -- Detect tabstop and shiftwidth automatically.
     -- https://github.com/NMAC427/guess-indent.nvim
     "NMAC427/guess-indent.nvim",
-    event = "BufWinEnter",
+    -- Do not lazy-load as this plugin sets up autocommands for `BufReadPost` and `BufNewFile` events.
+    lazy = false,
     opts = {},
   },
   {
