@@ -21,18 +21,20 @@ return {
       -- https://www.nerdfonts.com/cheat-sheet
       modified = " ",
       readonly = "󰌾",
+      unnamed = "",
+      newfile = "",
     }
 
     local filename_statusline = {
       "filename",
-      path = 1,             -- Show relative path.
+      path = 1, -- Show relative path.
       shorting_target = 50, -- Number of characters reserved for other statusline elements.
       symbols = filename_symbols,
     }
 
     local filename_winbar = {
       "filename",
-      path = 0,             -- Show only the filename.
+      path = 0, -- Show only the filename.
       shorting_target = 20, -- Number of characters reserved for other statusline elements.
       symbols = filename_symbols,
     }
