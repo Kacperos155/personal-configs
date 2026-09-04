@@ -9,14 +9,6 @@ return {
     opts = {},
   },
   {
-    -- Autoclose parentheses, brackets, quotes, etc.
-    -- https://github.com/windwp/nvim-autopairs
-    "windwp/nvim-autopairs",
-    event = "InsertEnter",
-    config = true,
-    opts = {},
-  },
-  {
     -- Highlight todo, notes, etc in comments.
     -- https://github.com/folke/todo-comments.nvim
     "folke/todo-comments.nvim",

@@ -25,6 +25,13 @@ return {
     opts = {},
   },
   {
+    -- Automatic character pairs.
+    -- https://github.com/nvim-mini/mini.nvim/blob/main/readmes/mini-pairs.md
+    "nvim-mini/mini.pairs",
+    event = "InsertEnter",
+    opts = {},
+  },
+  {
     -- Simple tabline for buffers with fixed order.
     -- https://github.com/nvim-mini/mini.nvim/blob/main/readmes/mini-tabline.md
     "nvim-mini/mini.tabline",

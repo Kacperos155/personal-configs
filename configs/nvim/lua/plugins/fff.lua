@@ -49,6 +49,7 @@ return {
       pattern = "fff_input",
       callback = function()
         vim.bo.autocomplete = false
+        vim.b.minipairs_disable = true
       end,
     })
   end,
