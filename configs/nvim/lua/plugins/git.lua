@@ -4,7 +4,9 @@ return {
   "lewis6991/gitsigns.nvim",
   event = "VeryLazy",
 
-  opts = {},
+  opts = {
+    max_file_length = 100000, -- Measured in lines.
+  },
 
   config = function(_, opts)
     local Git = require("gitsigns")
