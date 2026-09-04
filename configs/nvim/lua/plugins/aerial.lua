@@ -2,7 +2,13 @@
 -- https://github.com/stevearc/aerial.nvim
 return {
   "stevearc/aerial.nvim",
-  event = "VeryLazy",
+  -- Lazy-load on specified key mappings.
+  -- Since the key mappings are created at plugin load,
+  -- which-key.nvim needs descriptions of these keys to provide info before the plugin is loaded.
+  keys = {
+    { "<leader>ta" },
+    { "<leader>oa" },
+  },
 
   opts = {
     -- A list of symbol types to display.
