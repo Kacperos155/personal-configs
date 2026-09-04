@@ -26,6 +26,9 @@ return {
             -- Disable ATX headings, i.e. headings starting with '#'.
             -- They interfere with git comments.
             atx = false,
+            -- Disable icons for Setext headings, i.e. headings underlined with `---` or `===`.
+            icons = {},
+            setext = true,
           },
         },
       },
