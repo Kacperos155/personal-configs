@@ -66,6 +66,18 @@ vim.keymap.set("n", "<leader>td", function()
 end, { desc = "Toggle [d]iff mode" })
 
 -- Open <something>.
+-- Open an empty listed scratch/throwaway buffer.
+vim.keymap.set("n", "<leader>os", function()
+  local scratch_buffer = vim.api.nvim_create_buf(true, true)
+  vim.api.nvim_set_current_buf(scratch_buffer)
+end, { desc = "Open listed [s]cratch buffer" })
+
+-- Open an empty unlisted scratch/throwaway buffer.
+vim.keymap.set("n", "<leader>oS", function()
+  local scratch_buffer = vim.api.nvim_create_buf(false, true)
+  vim.api.nvim_set_current_buf(scratch_buffer)
+end, { desc = "Open unlisted [S]cratch buffer" })
+
 vim.keymap.set("n", "<leader>ot", "<cmd>terminal<CR><cmd>startinsert<CR>", { desc = "Open [t]erminal" })
 
 vim.keymap.set("n", "<leader>oy", function()

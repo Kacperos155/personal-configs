@@ -24,6 +24,8 @@ return {
         { "<leader>fg", icon = { icon = "󱎸 ", color = "green" }, desc = "Find via live [g]rep" },
         { "<leader>fs", icon = { icon = "󱎸 ", color = "green" }, desc = "Find current [s]election/word", mode = { "n", "x" } },
       { "<leader>o", group = "[O]pen", icon = { icon = "󱥫 ", color = "blue" } },
+        { "<leader>os", icon = { icon = "󰈤",  color = "cyan"   } }, -- Listed scratch buffer
+        { "<leader>oS", icon = { icon = "󰘓",  color = "cyan"   } }, -- Unlisted scratch buffer
         { "<leader>ot", icon = { icon = " ", color = "red"    } }, -- Terminal
         { "<leader>oy", icon = { icon = "󰇥 ", color = "yellow" } }, -- Yazi
       { "<leader>t", group = "[T]oggle", icon = { icon = " ", color = "yellow" } },
