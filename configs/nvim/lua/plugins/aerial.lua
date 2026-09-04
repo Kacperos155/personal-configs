@@ -11,6 +11,9 @@ return {
   },
 
   opts = {
+    -- File size limits.
+    disable_max_lines = 100000,
+    disable_max_size = 5 * 1024 * 1024, -- 5 MB
     -- A list of symbol types to display.
     filter_kind = {
       "Class",
