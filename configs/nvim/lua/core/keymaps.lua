@@ -66,8 +66,8 @@ vim.keymap.set("n", "<leader>td", function()
 end, { desc = "Toggle [d]iff mode" })
 
 -- Open <something>.
-vim.keymap.set("n", "<leader>oe", "<cmd>enew<CR>", { desc = "Open [e]mpty buffer" })
 vim.keymap.set("n", "<leader>ot", "<cmd>terminal<CR><cmd>startinsert<CR>", { desc = "Open [t]erminal" })
+
 vim.keymap.set("n", "<leader>oy", function()
   local yazi = require("yazi")
   yazi.pick_files()
