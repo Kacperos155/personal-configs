@@ -1,7 +1,7 @@
 -- Fast File Finder with live grep and background file watcher.
 -- https://github.com/dmtrKovalenko/fff#fffnvim
 return {
-  "dmtrKovalenko/fff.nvim",
+  "dmtrKovalenko/fff",
   -- Lazy-load on "find" key group.
   -- Since the key mappings are created at plugin load,
   -- which-key.nvim needs descriptions of these keys to provide info before the plugin is loaded.
