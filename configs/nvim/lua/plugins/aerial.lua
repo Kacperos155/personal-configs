@@ -34,7 +34,7 @@ return {
     end, { desc = "Toggle [a]erial / symbols window" })
 
     vim.keymap.set("n", "<leader>oa", function()
-      Aerial.nav_toggle()
-    end, { desc = "Open [a]erial / symbols navigation window" })
+      Aerial.open({ direction = "float" })
+    end, { desc = "Open [a]erial / symbols floating window" })
   end,
 }
