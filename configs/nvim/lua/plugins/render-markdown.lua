@@ -19,5 +19,16 @@ return {
       right_pad = 2,
       width = "block",
     },
+    overrides = {
+      filetype = {
+        gitcommit = {
+          heading = {
+            -- Disable ATX headings, i.e. headings starting with '#'.
+            -- They interfere with git comments.
+            atx = false,
+          },
+        },
+      },
+    },
   },
 }
