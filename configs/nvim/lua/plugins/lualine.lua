@@ -5,14 +5,9 @@ return {
   event = "VimEnter",
 
   config = function()
-    -- Option to use a single global statusline.
-    -- If false, every window has its own statusline.
-    -- If true, every window displays a filename in the bar at the top of the window.
-    local use_global_statusline = true
-
     -- Condition for displaying less important info.
     local function can_show_extended_info()
-      local width = use_global_statusline and vim.go.columns or vim.api.nvim_win_get_width(0)
+      local width = vim.go.columns
       return width >= 80
     end
 
@@ -95,12 +90,12 @@ return {
 
     require("lualine").setup({
       options = {
-        globalstatus = use_global_statusline,
+        -- Use a single global statusline instead of separate ones for each window.
+        globalstatus = true,
       },
       sections = {
         lualine_a = {
           "mode",
-          (use_global_statusline and "" or { diffmode_status }),
         },
         lualine_b = { filename_statusline },
         lualine_c = {
@@ -120,25 +115,17 @@ return {
           { "location", icon = " ", cond = can_show_extended_info },
         },
       },
-      inactive_sections = {
-        lualine_a = use_global_statusline and {} or { diffmode_status },
-        lualine_b = use_global_statusline and {} or { filename_statusline },
-        lualine_c = {},
-        lualine_x = {},
-        lualine_y = {},
-        lualine_z = {},
-      },
       winbar = {
-        lualine_a = use_global_statusline and { diffmode_status } or {},
-        lualine_b = use_global_statusline and { filename_winbar } or {},
+        lualine_a = { diffmode_status },
+        lualine_b = { filename_winbar },
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},
         lualine_z = {},
       },
       inactive_winbar = {
-        lualine_a = use_global_statusline and { diffmode_status } or {},
-        lualine_b = use_global_statusline and { filename_winbar } or {},
+        lualine_a = { diffmode_status },
+        lualine_b = { filename_winbar },
         lualine_c = {},
         lualine_x = {},
         lualine_y = {},
