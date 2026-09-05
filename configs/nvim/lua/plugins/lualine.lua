@@ -43,6 +43,21 @@ return {
       end
     end
 
+    -- Show current tabpage number when tabline is disabled.
+    local function current_tabpage()
+      if vim.go.showtabline == 0 then
+        local tabpage_count = vim.fn.tabpagenr("$")
+
+        if tabpage_count >= 2 then
+          local current_tabpage_number = vim.fn.tabpagenr()
+
+          -- The same format as mini.tabline.
+          return string.format("Tab %s/%s", current_tabpage_number, tabpage_count)
+        end
+      end
+      return ""
+    end
+
     local encoding = {
       "encoding",
       icon = "󰀬 ",
@@ -97,7 +112,10 @@ return {
         lualine_a = {
           "mode",
         },
-        lualine_b = { filename_statusline },
+        lualine_b = {
+          current_tabpage,
+          filename_statusline,
+        },
         lualine_c = {
           { "diff", source = gitsigns_diff_source },
         },
