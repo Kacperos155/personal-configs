@@ -107,6 +107,12 @@ return {
       options = {
         -- Use a single global statusline instead of separate ones for each window.
         globalstatus = true,
+
+        disabled_filetypes = {
+          winbar = {
+            "aerial",
+          },
+        },
       },
       sections = {
         lualine_a = {
@@ -150,7 +156,6 @@ return {
         lualine_z = {},
       },
       extensions = {
-        "aerial",
         "quickfix",
       },
     })
