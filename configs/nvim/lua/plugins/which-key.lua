@@ -28,7 +28,7 @@ return {
         { "<leader>os", icon = { icon = "󰈤",  color = "cyan"   } }, -- Listed scratch buffer
         { "<leader>oS", icon = { icon = "󰘓",  color = "cyan"   } }, -- Unlisted scratch buffer
         { "<leader>ot", icon = { icon = " ", color = "red"    } }, -- Terminal
-        { "<leader>oy", icon = { icon = "󰇥 ", color = "yellow" } }, -- Yazi
+        { "<leader>oy", icon = { icon = "󰇥 ", color = "yellow" }, desc = "Open [Y]azi" },
       { "<leader>t", group = "[T]oggle", icon = { icon = " ", color = "yellow" } },
         { "<leader>ta", icon = { icon = "󰊕", color = "blue" }, desc = "Toggle [a]erial / symbols window" },
       { "<leader>h", group = "Git [H]unks", mode = { "n", "v" } },
