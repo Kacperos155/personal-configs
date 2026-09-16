@@ -32,6 +32,13 @@ return {
     opts = {},
   },
   {
+    -- Interactive picker with support for custom sources.
+    -- https://github.com/nvim-mini/mini.nvim/blob/main/readmes/mini-pick.md
+    "nvim-mini/mini.pick",
+    event = "UIEnter",
+    opts = {},
+  },
+  {
     -- Simple tabline for buffers with fixed order.
     -- https://github.com/nvim-mini/mini.nvim/blob/main/readmes/mini-tabline.md
     "nvim-mini/mini.tabline",
