@@ -37,6 +37,15 @@ return {
     "nvim-mini/mini.pick",
     event = "UIEnter",
     opts = {},
+
+    config = function(_, opts)
+      local Pick = require("mini.pick")
+      Pick.setup(opts)
+
+      vim.keymap.set("n", "<leader>fb", function()
+        Pick.builtin.buffers({ include_current = false })
+      end, { desc = "Find [b]uffer" })
+    end,
   },
   {
     -- Simple tabline for buffers with fixed order.

@@ -20,6 +20,7 @@ return {
         { "<leader>br", icon = { icon = "󰈔 󰑐", color = "green"  } }, -- Reload
         { "<leader>by", icon = { icon = "󰆒 󰁍", color = "cyan"   } }, -- Yank
       { "<leader>f", group = "[F]ind", icon = { icon = " ", color = "green" }, mode = { "n", "x" } },
+        { "<leader>fb", icon = { icon = "󰱼 ", color = "green" }, desc = "Find [b]uffer" },
         { "<leader>ff", icon = { icon = "󰱼 ", color = "green" }, desc = "Find [f]iles" },
         { "<leader>fg", icon = { icon = "󱎸 ", color = "green" }, desc = "Find via live [g]rep" },
         { "<leader>fs", icon = { icon = "󱎸 ", color = "green" }, desc = "Find current [s]election/word", mode = { "n", "x" } },
