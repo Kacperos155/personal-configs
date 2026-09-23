@@ -12,6 +12,9 @@ return {
       -- Disable sign column rendering.
       enabled = false,
     },
+    anti_conceal = {
+      enabled = false,
+    },
     heading = {
       border = true,
       position = "inline",
