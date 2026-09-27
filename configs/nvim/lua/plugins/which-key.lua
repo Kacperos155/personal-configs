@@ -20,10 +20,17 @@ return {
         { "<leader>br", icon = { icon = "󰈔 󰑐", color = "green"  } }, -- Reload
         { "<leader>by", icon = { icon = "󰆒 󰁍", color = "cyan"   } }, -- Yank
       { "<leader>f", group = "[F]ind", icon = { icon = " ", color = "green" }, mode = { "n", "x" } },
+        -- Mini.Pick keymaps:
         { "<leader>fb", icon = { icon = "󰱼 ", color = "green" }, desc = "Find [b]uffer" },
-        { "<leader>fF", icon = { icon = "󰱼 ", color = "green" }, desc = "Find [f]iles" },
-        { "<leader>fG", icon = { icon = "󱎸 ", color = "green" }, desc = "Find via live [g]rep" },
-        { "<leader>fS", icon = { icon = "󱎸 ", color = "green" }, desc = "Find current [s]election/word", mode = { "n", "x" } },
+        { "<leader>ff", icon = { icon = "󰱼 ", color = "green" }, desc = "Find [f]iles" },
+        { "<leader>fg", icon = { icon = "󱎸 ", color = "green" }, desc = "Find via live [g]rep" },
+        { "<leader>fs", icon = { icon = "󱎸 ", color = "green" }, desc = "Find current [s]election/word" },
+        { "<leader>fs", icon = { icon = "󱎸 ", color = "green" }, desc = "Find current [s]election", mode = "x" },
+        -- FFF keymaps:
+        { "<leader>fF", icon = { icon = "󰱼 ", color = "green" }, desc = "(FFF) Find [F]iles" },
+        { "<leader>fG", icon = { icon = "󱎸 ", color = "green" }, desc = "(FFF) Find via live [G]rep" },
+        { "<leader>fS", icon = { icon = "󱎸 ", color = "green" }, desc = "(FFF) Find current [S]election/word" },
+        { "<leader>fS", icon = { icon = "󱎸 ", color = "green" }, desc = "(FFF) Find current [S]election", mode = "x" },
       { "<leader>o", group = "[O]pen", icon = { icon = "󱥫 ", color = "blue" } },
         { "<leader>oa", icon = { icon = "󰊕", color = "blue" }, desc = "Open [a]erial / symbols floating window" },
         { "<leader>os", icon = { icon = "󰈤",  color = "cyan"   } }, -- Listed scratch buffer

@@ -45,6 +45,40 @@ return {
       vim.keymap.set("n", "<leader>fb", function()
         Pick.builtin.buffers({ include_current = false })
       end, { desc = "Find [b]uffer" })
+
+      vim.keymap.set("n", "<leader>ff", function()
+        Pick.builtin.files()
+      end, { desc = "Find [f]iles" })
+
+      vim.keymap.set("n", "<leader>fg", function()
+        Pick.builtin.grep_live()
+      end, { desc = "Find via live [g]rep" })
+
+      -- Helper for <leader>fs keymaps.
+      local function pick_plain_grep(pattern)
+        local picker_name = string.format('Grep = "%s"', pattern)
+
+        Pick.builtin.grep(
+          { pattern = pattern, method = "plain" },
+          { source = { name = picker_name } }
+        )
+      end
+
+      vim.keymap.set("n", "<leader>fs", function()
+        -- Get current <word> under the cursor, see: `:h <cword>`
+        pick_plain_grep(vim.fn.expand("<cword>"))
+      end, { desc = "Find current [s]election/word" })
+
+      vim.keymap.set("x", "<leader>fs", function()
+        -- Get current visual selection.
+        local selection_lines = vim.fn.getregion(vim.fn.getpos("v"), vim.fn.getpos("."), {
+          type = vim.fn.mode(),
+        })
+
+        -- Truncate selection to only the first line.
+        -- Ripgrep (and fallbacks) search within individual lines by default.
+        pick_plain_grep(selection_lines[1])
+      end, { desc = "Find current [s]election" })
     end,
   },
   {
