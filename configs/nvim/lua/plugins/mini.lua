@@ -25,6 +25,17 @@ return {
     opts = {},
   },
   {
+    -- Git CLI integration.
+    -- https://github.com/nvim-mini/mini.nvim/blob/main/readmes/mini-git.md
+    "nvim-mini/mini-git",
+    cmd = "Git",
+    opts = {},
+    config = function(_, opts)
+      local Git = require("mini.git")
+      Git.setup(opts)
+    end,
+  },
+  {
     -- Automatic character pairs.
     -- https://github.com/nvim-mini/mini.nvim/blob/main/readmes/mini-pairs.md
     "nvim-mini/mini.pairs",
