@@ -6,9 +6,9 @@ return {
   -- Since the key mappings are created at plugin load,
   -- which-key.nvim needs descriptions of these keys to provide info before the plugin is loaded.
   keys = {
-    { "<leader>ff" },
-    { "<leader>fg" },
-    { "<leader>fs", mode = { "n", "x" } },
+    { "<leader>fF" },
+    { "<leader>fG" },
+    { "<leader>fS", mode = { "n", "x" } },
   },
 
   build = function()
@@ -31,15 +31,15 @@ return {
     local FFF = require("fff")
     FFF.setup(opts)
 
-    vim.keymap.set("n", "<leader>ff", function()
+    vim.keymap.set("n", "<leader>fF", function()
       FFF.find_files()
     end, { desc = "Find [f]iles" })
 
-    vim.keymap.set("n", "<leader>fg", function()
+    vim.keymap.set("n", "<leader>fG", function()
       FFF.live_grep()
     end, { desc = "Find via live [g]rep" })
 
-    vim.keymap.set({ "n", "x" }, "<leader>fs", function()
+    vim.keymap.set({ "n", "x" }, "<leader>fS", function()
       FFF.live_grep_under_cursor()
     end, { desc = "Find current [s]election/word" })
 
